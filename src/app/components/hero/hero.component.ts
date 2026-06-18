@@ -10,7 +10,10 @@ import { Component } from '@angular/core';
 export class HeroComponent {
 
 
-  protected readonly frameworks = [
-    { icon: '', title: ''}
+  protected readonly badges = [
+    { icon: '', title: 'Angular'},
+    { icon: '', title: '.Net Core'},
+    { icon: '', title: 'SQL Serve'},
+    { icon: '', title: 'Azure'}
   ]
 }

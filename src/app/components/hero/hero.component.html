@@ -16,21 +16,23 @@
           Building scalable web applications with Angular,
           ASP.NET Core, SQL Server and modern technologies.
         </p>
-
-        <div class="flex gap-4">
+        <div class="flex gap-4 mb-6">
           <button class="primary-btn">
             View Projects
           </button>
-
           <button class="secondary-btn">
             Download CV
           </button>
         </div>
-
+        <div class="flex gap-4 mb-6">
+          @for( badge of badges; track badge.title){ 
+            <button class="tech-badge">
+              {{ badge.title }}
+            </button>
+          }
+        </div>
       </div>
-
       <div class="flex justify-center">
-
         <div
           class="w-96 h-96 rounded-full
                  bg-gradient-to-br
@@ -38,14 +40,82 @@
                  to-cyan-500/20
                  border border-sky-500/20">
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider my-20"></div>
+
+<section id="about" class="py-24">
+  <div class="section-container">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="text-pink-500 font-semibold">
+          ABOUT ME
+        </span>
+        <h2 class="section-title mt-3">
+          Turning Business Problems Into Software Solutions
+        </h2>
+        <p class="text-zinc-400 leading-8 mt-6">
+          I'm a Full Stack Software Developer with over 6 years of
+          experience designing and building web applications,
+          REST APIs and business management systems.
+        </p>
+
+        <p class="text-zinc-400 leading-8 mt-4">
+          My expertise lies in Angular, ASP.NET Core, SQL Server
+          and enterprise software development. I enjoy creating
+          scalable systems that improve business efficiency and
+          deliver exceptional user experiences.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-6">
+        <div class="glass-card p-6 card-hover">
+          <h3 class="text-4xl font-bold text-pink-500">
+            6+
+          </h3>
+
+          <p class="text-zinc-400 mt-2">
+            Years Experience
+          </p>
+        </div>
+
+        <div class="glass-card p-6 card-hover">
+          <h3 class="text-4xl font-bold text-blue-500">
+            10+
+          </h3>
+
+          <p class="text-zinc-400 mt-2">
+            Projects Built
+          </p>
+        </div>
+
+        <div class="glass-card p-6 card-hover">
+          <h3 class="text-4xl font-bold text-green-500">
+            5+
+          </h3>
+
+          <p class="text-zinc-400 mt-2">
+            Technologies
+          </p>
+        </div>
+
+        <div class="glass-card p-6 card-hover">
+          <h3 class="text-4xl font-bold text-yellow-500">
+            100%
+          </h3>
+
+          <p class="text-zinc-400 mt-2">
+            Problem Solver
+          </p>
+        </div>
 
       </div>
 
     </div>
 
   </div>
-<h1 class="gradient-text">
-  JOHN SIMON
-</h1>
 
 </section>
