@@ -1,1 +1,57 @@
-<p>about works!</p>
+<section id="about" class="py-24">
+  <div class="section-container">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="text-pink-500 font-semibold">
+          ABOUT ME
+        </span>
+        <h2 class="section-title mt-3">
+          Turning Business Problems Into Software Solutions
+        </h2>
+        <p class="text-zinc-400 leading-8 mt-6">
+          I'm a Full Stack Software Developer with over 6 years of
+          experience designing and building web applications,
+          REST APIs and business management systems.
+        </p>
+
+        <p class="text-zinc-400 leading-8 mt-4">
+          My expertise lies in Angular, ASP.NET Core, SQL Server
+          and enterprise software development. I enjoy creating
+          scalable systems that improve business efficiency and
+          deliver exceptional user experiences.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-6">
+        @for(highlight of highlights; track highlight.title){
+            <div class="glass-card p-6 card-hover">
+          <h3 class="text-4xl font-bold" [ngClass]="highlight.textColor">
+            {{ highlight.value }}
+          </h3>
+          <p class="text-zinc-400 mt-2">
+            {{ highlight.title }}
+          </p>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+<!-- <div class="flex gap-8 mt-6">
+
+  <div>
+    <h4 class="text-pink-500 text-2xl font-bold">8+</h4>
+    <p class="text-zinc-400">Modules</p>
+  </div>
+
+  <div>
+    <h4 class="text-pink-500 text-2xl font-bold">20+</h4>
+    <p class="text-zinc-400">Features</p>
+  </div>
+
+  <div>
+    <h4 class="text-pink-500 text-2xl font-bold">100%</h4>
+    <p class="text-zinc-400">Responsive</p>
+  </div>
+
+</div> -->
