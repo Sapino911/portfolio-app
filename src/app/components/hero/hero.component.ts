@@ -9,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class HeroComponent {
 
+
+  protected readonly frameworks = [
+    { icon: '', title: ''}
+  ]
 }
