@@ -9,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class ProjectsComponent {
 
+  protected readonly projects = [
+    { image: '', title: 'Off The Chain Multiverse Platform', description: 'Music studio managment platform', badge: ['Angularjs','.NET Core', 'SQL Server','JWT','Stripe'], button: ['Live Demo', 'GitHub'] },
+    { image: '', title: 'Off The Chain Multiverse Platform', description: 'Music studio managment platform', badge: ['Angularjs','.NET Core', 'SQL Server','JWT','Stripe'], button: ['Live Demo', 'GitHub'] },
+    { image: '', title: 'Off The Chain Multiverse Platform', description: 'Music studio managment platform', badge: ['Angularjs','.Tailwind Css', 'TS'], button: ['Live Demo', 'GitHub'] }
+  ]
 }

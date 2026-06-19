@@ -39,6 +39,7 @@ html {
 }
 
 body {
+  /* background: #02030c; */
   background: #050816;
   color: white;
   font-family: Inter, sans-serif;
@@ -97,8 +98,9 @@ body {
           blur(20px);
 
       border:
-          1px solid rgba(255, 255, 255, .08);
-
+          1px solid #ffffff14;
+          
+        
       border-radius:
           20px;
 
@@ -146,19 +148,20 @@ body {
     /* Neon Glow Background */
 
     .hero-glow {
-    position: absolute;
+    position: relative; 
 
-        width: 500px;
-        height: 500px;
-
+        width: auto;
+        height: auto;
+        padding: 10px;
         background:
             radial-gradient(circle,
                 rgba(255, 45, 141, .15),
-                transparent 70%);
+                transparent 0%);
 
-        filter: blur(80px);
+        filter: blur(0.3px);
 
         border-radius: 9999px;
+        z-index: -10px;
     }
 
     .card-hover {
