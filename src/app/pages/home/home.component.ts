@@ -5,11 +5,12 @@ import { AboutComponent } from "../about/about.component";
 import { SkillCardComponent } from "../../components/skill-card/skill-card.component";
 import { ProjectCardComponent } from "../../components/project-card/project-card.component";
 import { ProjectsComponent } from "../projects/projects.component";
+import { ExperienceComponent } from "../experience/experience.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavbarComponent, HeroComponent, AboutComponent, SkillCardComponent, ProjectCardComponent, ProjectsComponent],
+  imports: [NavbarComponent, HeroComponent, AboutComponent, SkillCardComponent, ProjectCardComponent, ProjectsComponent, ExperienceComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

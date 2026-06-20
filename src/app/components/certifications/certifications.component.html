@@ -1,0 +1,18 @@
+
+    <div class="glass-card p-6"> 
+        <h1 class="section-subtitle text-white uppercase font-semibold mb-6">
+            <span class="text-xs bg-pink-500 rounded-full px-1.5 mr-4"></span>
+            Certifications
+        </h1>  
+        @for (certification of certifications; track certification.title){  
+        <div class="glass-card flex p-3 items-center mb-4">
+            <div class="p-6 border border-[#ffffff14] rounded-2xl">
+                {{ certification.icon }}
+            </div>
+            <div class="ps-4">
+                <h1 class="section-subtitle font-semibold capitalize text-white">{{ certification.title }}</h1>
+                        <p class="leading-6 text-zinc-400">{{ certification.text }}</p>
+            </div>
+        </div>
+    }
+    </div>
