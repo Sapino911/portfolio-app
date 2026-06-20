@@ -7,11 +7,12 @@ import { ProjectCardComponent } from "../../components/project-card/project-card
 import { ProjectsComponent } from "../projects/projects.component";
 import { ExperienceComponent } from "../experience/experience.component";
 import { ContactComponent } from "../contact/contact.component";
+import { FooterComponent } from "../../components/footer/footer.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavbarComponent, HeroComponent, AboutComponent, SkillCardComponent, ProjectCardComponent, ProjectsComponent, ExperienceComponent, ContactComponent],
+  imports: [NavbarComponent, HeroComponent, AboutComponent, SkillCardComponent, ProjectCardComponent, ProjectsComponent, ExperienceComponent, ContactComponent, FooterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
