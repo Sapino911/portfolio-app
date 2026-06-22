@@ -27,7 +27,7 @@
                         <h1 class="section-subtitle font-semibold capitalize text-white">off the chain multiverse studio (OTCMVS)</h1>
                         <h2 class="text-pink-500 font-semibold leading-8">Full Stack Music Studio Management System</h2>
                         <p class="leading-6 mt-3 text-zinc-400">A comprehensive platform for managing artist bookings, studio sessions, 
-                            songs, subscriptions, payments and analysis.
+                            songs, subscriptions, payments and analytics.
                         </p>
                     </div>
                     <div>
@@ -48,7 +48,7 @@
                             <button class="secondary-btn">
                                 Git Repository
                             </button>
-                            <button class="secondary-btn">
+                            <button class="secondary-btn"  (click)="openProject(project)">
                                 View Details
                             </button>
                         </div>
@@ -57,3 +57,11 @@
             </div>
     </div>
 </section>
+@if(showProjectModal()) {
+
+  <app-project-details
+    [project]="selectedProject()!"
+    (close)="closeProjectModal()">
+  </app-project-details>
+
+}

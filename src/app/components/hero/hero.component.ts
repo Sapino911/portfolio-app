@@ -9,7 +9,6 @@ import { Component } from '@angular/core';
 })
 export class HeroComponent {
 
-
   protected readonly badges = [
     { icon: '', title: 'Angular'},
     { icon: '', title: '.Net Core'},

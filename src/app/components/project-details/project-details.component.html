@@ -1,0 +1,446 @@
+<div
+  class="fixed inset-0 z-50
+         bg-black/80 backdrop-blur-md
+         flex items-center justify-center p-6"
+  (click)="onBackdropClick($event)">
+
+  <div
+    class="glass-card
+           w-full
+           max-w-7xl
+           h-[90vh]
+           overflow-hidden
+           relative">
+
+    <!-- Header -->
+
+    <div
+      class="flex justify-between items-center
+             border-b border-white/10
+             px-6 py-4">
+
+      <h2 class="text-2xl font-bold">
+        Project Details
+      </h2>
+
+      <button
+        (click)="closeModal()"
+        class="
+          w-10 h-10
+          rounded-full
+          hover:bg-white/10">
+
+        ✕
+      </button>
+
+    </div>
+
+    <!-- Body -->
+
+    <div
+      class="grid lg:grid-cols-[350px_1fr]
+             h-[calc(90vh-80px)]">
+
+      <!-- SIDEBAR -->
+
+      <div
+        class="
+          border-r border-white/10
+          p-6
+          overflow-y-auto">
+
+        <h1
+          class="
+            text-4xl
+            font-bold
+            mb-4">
+
+          {{ project.title }}
+        </h1>
+
+        <p
+          class="
+            text-pink-500
+            mb-6">
+
+          {{ project.subtitle }}
+        </p>
+
+        <p
+          class="
+            text-zinc-400
+            mb-8">
+
+          {{ project.description }}
+        </p>
+
+        <!-- Metadata -->
+
+        <div class="space-y-4">
+
+          <div>
+            <span class="text-zinc-500">
+              Duration
+            </span>
+
+            <p>{{ project.duration }}</p>
+          </div>
+
+          <div>
+            <span class="text-zinc-500">
+              Users
+            </span>
+
+            <p>{{ project.users }}</p>
+          </div>
+
+          <div>
+            <span class="text-zinc-500">
+              Category
+            </span>
+
+            <p>{{ project.category }}</p>
+          </div>
+
+        </div>
+
+        <!-- Technologies -->
+
+        <div class="mt-10">
+
+          <h3
+            class="
+              font-semibold
+              mb-4">
+
+            Technologies Used
+          </h3>
+
+          <div
+            class="
+              flex flex-wrap
+              gap-2">
+
+            @for(tech of project.technologies; track tech){
+
+              <span
+                class="tech-badge">
+
+                {{ tech }}
+
+              </span>
+
+            }
+
+          </div>
+
+        </div>
+
+        <!-- Buttons -->
+
+        <div
+          class="
+            flex gap-4
+            mt-10">
+
+          <a
+            [href]="project.liveDemo"
+            target="_blank"
+            class="primary-btn">
+
+            Live Demo
+
+          </a>
+
+          <a
+            [href]="project.github"
+            target="_blank"
+            class="secondary-btn">
+
+            View Code
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- CONTENT -->
+
+      <div
+        class="
+          overflow-y-auto
+          p-6">
+
+        <!-- Main Image -->
+
+        <img
+          [src]="selectedImage()"
+          class="
+            w-full
+            h-[450px]
+            object-cover
+            rounded-2xl
+            border border-white/10
+          ">
+
+        <!-- Gallery -->
+
+        <div
+          class="
+            flex gap-3
+            mt-4
+            overflow-x-auto">
+
+          @for(image of project.screenshots; track image){
+
+            <button
+              (click)="selectImage(image)"
+              class="
+                rounded-xl
+                overflow-hidden
+                border-2
+              "
+              [class.border-pink-500]="selectedImage() === image"
+              [class.border-white]="selectedImage() !== image">
+
+              <img
+                [src]="image"
+                class="
+                  w-32
+                  h-20
+                  object-cover">
+
+            </button>
+
+          }
+
+        </div>
+
+        <!-- Tabs -->
+
+        <div
+          class="
+            flex gap-8
+            mt-8
+            border-b border-white/10">
+
+          <button
+            (click)="setTab('overview')"
+            class="pb-4"
+            [class.text-pink-500]="activeTab() === 'overview'">
+
+            Overview
+
+          </button>
+
+          <button
+            (click)="setTab('features')"
+            class="pb-4"
+            [class.text-pink-500]="activeTab() === 'features'">
+
+            Features
+
+          </button>
+
+          <button
+            (click)="setTab('architecture')"
+            class="pb-4"
+            [class.text-pink-500]="activeTab() === 'architecture'">
+
+            Architecture
+
+          </button>
+
+          <button
+            (click)="setTab('challenges')"
+            class="pb-4"
+            [class.text-pink-500]="activeTab() === 'challenges'">
+
+            Challenges
+
+          </button>
+
+          <button
+            (click)="setTab('lessons')"
+            class="pb-4"
+            [class.text-pink-500]="activeTab() === 'lessons'">
+
+            Lessons Learned
+
+          </button>
+
+        </div>
+
+        <!-- TAB CONTENT -->
+
+        <div
+          class="
+            mt-8
+            tab-content">
+
+          @if(activeTab() === 'overview') {
+
+            <div
+              class="
+                grid md:grid-cols-2
+                gap-6">
+
+              <div
+                class="
+                  glass-card
+                  p-6">
+
+                <h3
+                  class="
+                    text-pink-500
+                    mb-4">
+
+                  The Problem
+
+                </h3>
+
+                <p>
+
+                  {{ project.problem }}
+
+                </p>
+
+              </div>
+
+              <div
+                class="
+                  glass-card
+                  p-6">
+
+                <h3
+                  class="
+                    text-blue-500
+                    mb-4">
+
+                  The Solution
+
+                </h3>
+
+                <p>
+
+                  {{ project.solution }}
+
+                </p>
+
+              </div>
+
+            </div>
+
+          }
+
+          @if(activeTab() === 'features') {
+
+            <div
+              class="
+                grid md:grid-cols-2
+                gap-4">
+
+              @for(feature of project.features; track feature){
+
+                <div
+                  class="
+                    glass-card
+                    p-5">
+
+                  ✓ {{ feature }}
+
+                </div>
+
+              }
+
+            </div>
+
+          }
+
+          @if(activeTab() === 'architecture') {
+
+            <div
+              class="
+                glass-card
+                p-10">
+
+              <div
+                class="
+                  flex flex-col
+                  items-center
+                  gap-6">
+
+                <div class="tech-badge">
+                  Angular Frontend
+                </div>
+
+                ↓
+
+                <div class="tech-badge">
+                  ASP.NET Core API
+                </div>
+
+                ↓
+
+                <div class="tech-badge">
+                  SQL Server
+                </div>
+
+              </div>
+
+            </div>
+
+          }
+
+          @if(activeTab() === 'challenges') {
+
+            <div class="space-y-4">
+
+              @for(challenge of project.challenges; track challenge){
+
+                <div
+                  class="
+                    glass-card
+                    p-5">
+
+                  {{ challenge }}
+
+                </div>
+
+              }
+
+            </div>
+
+          }
+
+          @if(activeTab() === 'lessons') {
+
+            <div class="space-y-4">
+
+              @for(lesson of project.lessonsLearned; track lesson){
+
+                <div
+                  class="
+                    glass-card
+                    p-5">
+
+                  {{ lesson }}
+
+                </div>
+
+              }
+
+            </div>
+
+          }
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
