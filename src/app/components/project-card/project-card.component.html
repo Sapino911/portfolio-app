@@ -48,7 +48,7 @@
                             <button class="secondary-btn">
                                 Git Repository
                             </button>
-                            <button class="secondary-btn"  (click)="openProject(project)">
+                            <button class="secondary-btn">
                                 View Details
                             </button>
                         </div>
@@ -57,11 +57,3 @@
             </div>
     </div>
 </section>
-@if(showProjectModal()) {
-
-  <app-project-details
-    [project]="selectedProject()!"
-    (close)="closeProjectModal()">
-  </app-project-details>
-
-}

@@ -1,21 +1,4 @@
-import {
-  Component,
-  Input,
-  Output,
-  EventEmitter,
-  signal,
-  HostListener
-} from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Project } from '../../core/models/project';
-
-type ProjectTab =
-  | 'overview'
-  | 'features'
-  | 'architecture'
-  | 'challenges'
-  | 'lessons';
-
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-project-details',
@@ -25,71 +8,6 @@ type ProjectTab =
   styleUrl: './project-details.component.scss'
 })
 export class ProjectDetailsComponent {
-   @Input() project!: Project;
-     @Output() close =
-    new EventEmitter<void>();
-
-  activeTab =
-    signal<ProjectTab>('overview'); 
-  /* activeTab = 'overview';
-
-  setTab(tab: string) {
-    this.activeTab = tab;
-  }  */
-
-  selectedImage =
-    signal('');
-
-
-   ngOnInit(): void {
-
-    if (
-      this.project &&
-      this.project.screenshots.length
-    ) {
-      this.selectedImage.set(
-        this.project.screenshots[0]
-      );
-    }
-  }
-
-  setTab(tab: ProjectTab): void {
-    this.activeTab.set(tab);
-  } 
-
-  selectImage(image: string): void {
-    this.selectedImage.set(image);
-  }
-
-  closeModal(): void {
-    this.close.emit();
-  }
-
-  @HostListener('document:keydown.escape')
-  onEscape(): void {
-
-  this.closeModal();
-  }
-
-  onBackdropClick(
-  event: MouseEvent
-  ): void {
-
-  if (
-    event.target ===
-    event.currentTarget
-  ) {
-    this.closeModal();
-  }
-}
-  
-   /* activeTab = 'overview';
-
-  setTab(tab: string) {
-    this.activeTab = tab;
-  } */
-
-
   protected readonly badges = [
     { icon: '', title: 'Angular'},
     { icon: '', title: '.Net Core 8'},
@@ -102,7 +20,7 @@ export class ProjectDetailsComponent {
     { icon: '', title: 'Azure'}
   ]
 
-   /*  screenshots = [
+    screenshots = [
     '..//public/otcmvs-db.png',
     'assets/projects/otcmvs/payments.png',
     'assets/projects/otcmvs/subscriptions.png',
@@ -113,8 +31,23 @@ export class ProjectDetailsComponent {
 
     changeImage(image: string) {
       this.selectedImage = image;
-    } */
+    }
 
- 
+  activeTab = 'overview';
+
+  setTab(tab: string) {
+    this.activeTab = tab;
+  }
+
+  showProjectModal = false;
+   openProject(){
+
+    this.showProjectModal = true;
+  }
+
+  closeProjectModal(): void {
+
+    this.showProjectModal = false;
+  }
 
 }
