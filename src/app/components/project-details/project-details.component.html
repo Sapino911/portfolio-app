@@ -1,13 +1,15 @@
 <section id="featured-project" class="py-6">
     <div class="section-container">
         <div class="glass-card border border-[#ff2d8d4d] grid lg:grid-cols-[1fr_2fr] gap-12 p-6">
+            
             <div class="border-r border-[#ff2d8d4d] pr-6">
                 <span class="text-pink-500 font-semibold">
                     Project-Details
                 </span>
                     <h2 class="section-subtitle text-white mt-3">
                         Off The Chain Multiverse Studio (OTCMVS)
-                    </h2>
+                    </h2> 
+                    <p class="text-xs"><span class="text-sm w-4 h-4 bg-pink-500 rounded-full px-1.5 mr-4"></span>In Production</p>                   
                 <span class="text-pink-500 font-semibold">
                     Full Stack Music Studio Management Platform
                 </span>
@@ -33,7 +35,7 @@
                             <p class="leading-6 text-white">100+ Registered Users</p>
                         </div>
                     </div>
-                    <div class="flex p-2 items-start mt-6">
+                    <div class="flex p-2 items-start mt-3">
                         <div class="p-3 border border-[#ffffff14] rounded-lg">
                         </div>             
                         <div class="ps-2">
@@ -41,7 +43,7 @@
                             <p class="leading-6 text-white">Web Application</p>
                         </div>
                     </div>
-                    <div class="flex p-2 items-start mt-6">
+                    <div class="flex p-2 items-start mt-3">
                         <div class="p-3 border border-[#ffffff14] rounded-lg">
                         </div>             
                         <div class="ps-2">
@@ -49,7 +51,7 @@
                             <p class="leading-6 text-pink-500">https://otcmvs/demo.co.za</p>
                         </div>
                     </div>
-                    <div class="flex p-2 items-start mt-6">
+                    <div class="flex p-2 items-start mt-3">
                         <div class="p-3 border border-[#ffffff14] rounded-lg">
                         </div>             
                         <div class="ps-2">
@@ -58,17 +60,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="section-divider my-8"></div>
-                <!-- <div class="">
+                <div class="section-divider my-4"></div>
+                <div class="">
                     <h3 class="mb-6 text-zinc-400">Technologies Used</h3>
-                    <div class="flex gap-2  mb-6">
+                    <div class="grid grid-cols-3 gap-2  mb-6">
                     @for( badge of badges; track badge.title){ 
-                        <button class="tech-badge text-sm">
+                        <span class="tech-badge text-xs items-center justify-items-center">
                         {{ badge.title }}
-                        </button>
+                        </span>
                     }
                     </div>
-                </div> -->
+                </div>
                 <div class="grid grid-cols-2 gap-4">
                             <button class="primary-btn">
                                 Live Demo
@@ -98,7 +100,7 @@
                         <button
                         (click)="changeImage(image)"
                         class="
-                            flex-shrink-0
+                            flex-shrink-1
                             overflow-hidden
                             rounded-xl
                             border
@@ -108,7 +110,7 @@
                         <img
                             [src]="image"
                             class="
-                            h-24
+                            h-20
                             w-40
                             object-cover
                             ">

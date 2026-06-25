@@ -12,19 +12,20 @@ export class ProjectDetailsComponent {
     { icon: '', title: 'Angular'},
     { icon: '', title: '.Net Core 8'},
     { icon: '', title: 'SQL Server'},
-    { icon: '', title: 'Tailwind Css'},
-    { icon: '', title: 'Typescript'},
+    { icon: '', title: 'TailwindCss'},
     { icon: '', title: 'JWT'},
     { icon: '', title: 'Stripe'},
-    { icon: '', title: 'Chart.js'},
+/*     { icon: '', title: 'Chart.js'}, */
     { icon: '', title: 'Azure'}
   ]
 
     screenshots = [
     '..//public/otcmvs-db.png',
-    'assets/projects/otcmvs/payments.png',
-    'assets/projects/otcmvs/subscriptions.png',
-    'assets/projects/otcmvs/users.png'
+    '..//public/otcmvs-um.png',
+    /* '..//public/otcmvs-bm.png', */
+    '..//public/otcmvs-sm.png',
+    '..//public/otcmvs-subm.png',
+    '..//public/otcmvs-pmnt.png'
     ];
 
     selectedImage = this.screenshots[0];
@@ -39,6 +40,6 @@ export class ProjectDetailsComponent {
     this.activeTab = tab;
   }
 
-
+  
 
 }
