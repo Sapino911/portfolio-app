@@ -48,7 +48,7 @@
                             <button class="secondary-btn">
                                 Git Repository
                             </button>
-                            <button class="secondary-btn">
+                            <button (click)="openProjectModal()"  class="secondary-btn">
                                 View Details
                             </button>
                         </div>
@@ -57,3 +57,15 @@
             </div>
     </div>
 </section>
+
+ @if(showProjectModal) {  
+  <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
+     <button 
+        class="flex text-white/50 hover:text-white">
+            <span (click)="closeProjectModal()">✕</span>
+            
+    </button> 
+    <app-project-details/>
+  </div>  
+  
+} 

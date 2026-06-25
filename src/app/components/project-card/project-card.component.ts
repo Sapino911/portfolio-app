@@ -1,6 +1,6 @@
-import { Component, Input, signal } from '@angular/core';
-import { Project } from '../../core/models/project';
-import { ProjectDetailsComponent } from "../project-details/project-details.component";
+import { Component } from '@angular/core';
+import { ProjectDetailsComponent } from '../project-details/project-details.component';
+
 
 @Component({
   selector: 'app-project-card',
@@ -9,27 +9,18 @@ import { ProjectDetailsComponent } from "../project-details/project-details.comp
   templateUrl: './project-card.component.html',
   styleUrl: './project-card.component.scss'
 })
-export class ProjectCardComponent {
-    @Input()
-  project!: Project;
-  
-  showProjectModal =
-    signal(false);
+export class  ProjectCardComponent {
 
-  selectedProject =
-    signal<Project | null>(null);
 
-  openProject(project: Project): void {
+   showProjectModal = false;
+   selectedProduct: any = null;
+   openProjectModal(){
 
-    this.selectedProject.set(project);
-
-    this.showProjectModal.set(true);
+    this.showProjectModal = true;
   }
 
-  closeProjectModal(): void {
+  closeProjectModal() {
 
-    this.showProjectModal.set(false);
-
-    this.selectedProject.set(null);
+    this.showProjectModal = false;
   }
 }

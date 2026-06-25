@@ -39,15 +39,6 @@ export class ProjectDetailsComponent {
     this.activeTab = tab;
   }
 
-  showProjectModal = false;
-   openProject(){
 
-    this.showProjectModal = true;
-  }
-
-  closeProjectModal(): void {
-
-    this.showProjectModal = false;
-  }
 
 }
