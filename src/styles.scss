@@ -46,7 +46,37 @@ body {
   overflow-x: hidden;
 }
 
+
+
 @layer components {
+    .progress{
+
+height:3px;
+
+background:
+
+linear-gradient(
+90deg,
+#ff2d8d,
+#3b82f6
+);
+}
+
+.navbar-scrolled{
+
+backdrop-filter:
+
+blur(20px);
+
+background:
+
+rgba(5,8,22,.75);
+
+border-bottom:
+
+1px solid rgba(255,255,255,.08);
+
+}
 
    .section-container {
     @apply max-w-7xl mx-auto px-6 lg:px-10;
@@ -262,6 +292,52 @@ body {
     z-index: 20;
     background: rgba(5, 8, 22, 0.95);
     backdrop-filter: blur(12px);
+}
+
+.project-card{
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+}
+
+.project-card:hover{
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(255,45,141,.35);
+
+    box-shadow:
+        0 20px 50px rgba(255,45,141,.15);
+
+}
+
+.project-card img{
+
+    transition:
+        transform .45s ease;
+
+}
+
+.project-card:hover img{
+
+    transform:
+        scale(1.06);
+
+}
+
+.main-screenshot{
+
+transition:
+
+opacity .25s ease,
+
+transform .25s ease;
+
 }
 
 }

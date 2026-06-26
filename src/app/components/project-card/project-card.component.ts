@@ -1,15 +1,21 @@
 import { Component, Input } from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
 import { Project } from '../../core/models/project.model';
+import { scaleAnimation } from '../../shared/animations';
 
 @Component({
   selector: 'app-project-card',
   standalone: true,
   imports: [ ],
+  animations: [scaleAnimation],
   templateUrl: './project-card.component.html',
   styleUrl: './project-card.component.scss'
 })
 export class  ProjectCardComponent {
+
+  /*  animations: [
+    scaleAnimation
+  ] */
 @Input() project!: Project;
 
 @Output() viewDetails = new EventEmitter<Project>();

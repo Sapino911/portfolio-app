@@ -1,11 +1,13 @@
 import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { Project } from '../../core/models/project.model';
 import { NgClass } from '@angular/common';
+import { fadeAnimation, modalAnimation, scaleAnimation, slideUpAnimation } from '../../shared/animations';
 
 @Component({
   selector: 'app-project-details',
   standalone: true,
   imports: [NgClass],
+  animations: [fadeAnimation, modalAnimation, scaleAnimation, slideUpAnimation],
   templateUrl: './project-details.component.html',
   styleUrl: './project-details.component.scss'
 })
