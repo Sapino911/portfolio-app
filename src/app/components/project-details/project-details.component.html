@@ -1,0 +1,1078 @@
+<!-- <section id="featured-project" class="py-6">
+    <div class="section-container">
+        <div class="glass-card border border-[#ff2d8d4d] grid lg:grid-cols-[1fr_2fr] gap-12 p-6">
+            
+            <div class="border-r border-[#ff2d8d4d] pr-6">
+                <span class="text-pink-500 font-semibold">
+                    Project-Details
+                </span>
+                    <h2 class="section-subtitle text-white mt-3">
+                        Off The Chain Multiverse Studio (OTCMVS)
+                    </h2> 
+                    <p class="text-xs"><span class="text-sm w-4 h-4 bg-pink-500 rounded-full px-1.5 mr-4"></span>In Production</p>                   
+                <span class="text-pink-500 font-semibold">
+                    Full Stack Music Studio Management Platform
+                </span>
+                <p class="text-zinc-400 leading-8 mt-6">
+                    A comprehensive platform for managing artist bookings, studio sessions, 
+                            songs, subscriptions, payments and analytics.
+                </p>
+
+                <div class="">
+                    <div class="flex p-2 items-start mt-6">
+                        <div class="p-3 border border-[#ffffff14] rounded-lg">
+                        </div>             
+                        <div class="ps-2">
+                            <p class="leading-6 text-zinc-400">Duration</p>
+                            <p class="leading-6 text-white">Jan 2025 - April 2025 (4 Months)</p>
+                        </div>
+                    </div>
+                    <div class="flex p-2 items-start mt-6">
+                        <div class="p-3 border border-[#ffffff14] rounded-lg">
+                        </div>             
+                        <div class="ps-2">
+                            <p class="leading-6 text-zinc-400">Users</p>
+                            <p class="leading-6 text-white">100+ Registered Users</p>
+                        </div>
+                    </div>
+                    <div class="flex p-2 items-start mt-3">
+                        <div class="p-3 border border-[#ffffff14] rounded-lg">
+                        </div>             
+                        <div class="ps-2">
+                            <p class="leading-6 text-zinc-400">Category</p>
+                            <p class="leading-6 text-white">Web Application</p>
+                        </div>
+                    </div>
+                    <div class="flex p-2 items-start mt-3">
+                        <div class="p-3 border border-[#ffffff14] rounded-lg">
+                        </div>             
+                        <div class="ps-2">
+                            <p class="leading-6 text-zinc-400">Live Demo</p>
+                            <p class="leading-6 text-pink-500">https://otcmvs/demo.co.za</p>
+                        </div>
+                    </div>
+                    <div class="flex p-2 items-start mt-3">
+                        <div class="p-3 border border-[#ffffff14] rounded-lg">
+                        </div>             
+                        <div class="ps-2">
+                            <p class="leading-6 text-zinc-400">Repository</p>
+                            <p class="leading-6 text-pink-500">github.com/masego/otcmvs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-divider my-4"></div>
+                <div class="">
+                    <h3 class="mb-6 text-zinc-400">Technologies Used</h3>
+                    <div class="grid grid-cols-3 gap-2  mb-6">
+                    @for( badge of badges; track badge.title){ 
+                        <span class="tech-badge text-xs items-center justify-items-center">
+                        {{ badge.title }}
+                        </span>
+                    }
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                            <button class="primary-btn">
+                                Live Demo
+                            </button>
+                            <button class="secondary-btn">
+                                Git Repository
+                            </button>
+                        </div>
+            </div>
+            <div classs="border col-span-1">
+                <div>
+                    <div class="mb-6">
+                    <img
+                        [src]="selectedImage"
+                        alt="Project Screenshot"
+                        class="
+                        w-full
+                        rounded-2xl
+                        border
+                        border-white/10
+                        object-cover
+                        h-[450px]
+                        ">
+                    </div>
+                    <div class="flex gap-4 overflow-x-auto pb-2">
+                    @for(image of screenshots; track image){
+                        <button
+                        (click)="changeImage(image)"
+                        class="
+                            flex-shrink-1
+                            overflow-hidden
+                            rounded-xl
+                            border
+                            border-white/10
+                            hover:border-pink-500">
+
+                        <img
+                            [src]="image"
+                            class="
+                            h-20
+                            w-40
+                            object-cover
+                            ">
+                        </button>
+                    }
+
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <div class="flex gap-8 border-b border-white/10 mb-8">
+                        <button (click)="setTab('overview')" [class.text-pink-500]="activeTab === 'overview'">
+                        Overview
+                        </button>
+
+                        <button (click)="setTab('features')" [class.text-pink-500]="activeTab === 'features'">
+                        Features
+                        </button>
+
+                        <button (click)="setTab('architecture')" [class.text-pink-500]="activeTab === 'architecture'">
+                        Architecture
+                        </button>
+
+                        <button (click)="setTab('challenges')" [class.text-pink-500]="activeTab === 'challenges'">
+                        Challenges
+                        </button>
+
+                        <button (click)="setTab('lessons')" [class.text-pink-500]="activeTab === 'lessons'">
+                        Lessons Learned
+                        </button>
+                    </div>
+                </div>
+                @if(activeTab === 'overview') {
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="glass-card p-6">
+                        <h3 class="text-pink-500 mb-4">
+                        The Problem
+                        </h3>
+                        <p>
+                        Studios struggled to manage bookings,
+                        subscriptions and artist records manually.
+                        </p>
+
+                    </div>
+                    <div class="glass-card p-6">
+                        <h3 class="text-blue-500 mb-4">
+                        The Solution
+                        </h3>
+                        <p>
+                        Built a centralized management platform
+                        using Angular and ASP.NET Core.
+                        </p>
+                    </div>
+                </div>
+                }
+                @if(activeTab === 'features') {
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="glass-card p-5">
+                        ✓ Artist Management
+                    </div>
+                    <div class="glass-card p-5">
+                        ✓ Booking Management
+                    </div>
+                    <div class="glass-card p-5">
+                        ✓ Subscription Management
+                    </div>
+                    <div class="glass-card p-5">
+                        ✓ Analytics Dashboard
+                    </div>
+                    <div class="glass-card p-5">
+                        ✓ Payment Tracking
+                    </div>
+                </div>
+                }  
+                @if(activeTab === 'architecture') {
+                <div class="glass-card p-10">
+                    <div class="flex flex-col items-center gap-6">
+
+                        <div class="tech-badge">
+                        Angular Frontend
+                        </div>
+
+                        ↓
+
+                        <div class="tech-badge">
+                        ASP.NET Core API
+                        </div>
+
+                        ↓
+
+                        <div class="tech-badge">
+                        SQL Server
+                        </div>
+
+                    </div>
+                </div>
+                }
+                @if(activeTab === 'challenges') {
+                <ul class="space-y-4">
+                    <li class="glass-card p-5">
+                        Implementing JWT Authentication
+                    </li>
+
+                    <li class="glass-card p-5">
+                        Designing Dashboard Analytics
+                    </li>
+
+                    <li class="glass-card p-5">
+                        Building Role-Based Access Control
+                    </li>
+                </ul>
+                }
+                @if(activeTab === 'lessons') {
+                <div class="glass-card p-6">
+                <ul class="space-y-4">
+                    <li>
+                    Better state management improves maintainability.
+                    </li>
+
+                    <li>
+                    Modular architecture scales better.
+                    </li>
+
+                    <li>
+                    User experience is as important as functionality.
+                    </li>
+                </ul>
+                </div>
+                }             
+            </div>
+        </div>
+    </div>
+</section>
+ -->
+
+@if(isOpen){
+
+<div
+class="fixed inset-0 z-[999] bg-black/80 backdrop-blur-md flex items-center justify-center p-6">
+
+    <div
+    class="glass-card w-full max-w-7xl h-[92vh] overflow-hidden rounded-3xl">
+
+        <!-- Header -->
+
+        <header
+        class="flex items-center justify-between p-6 border-b border-white/10">
+
+            <div>
+
+                <h2 class="text-3xl font-bold">
+
+                    {{project.title}}
+
+                </h2>
+
+                <p class="text-pink-500 mt-1">
+
+                    {{project.subtitle}}
+
+                </p>
+
+            </div>
+
+            <div class="flex gap-4">
+
+                <button
+                class="secondary-btn">
+
+                    Live Demo
+
+                </button>
+
+                <button
+                class="secondary-btn">
+
+                    GitHub
+
+                </button>
+
+                <button
+                (click)="closeModal()"
+                class="w-11 h-11 rounded-xl hover:bg-white/10">
+
+                    ✕
+
+                </button>
+
+            </div>
+
+        </header>
+
+        <!-- Body -->
+
+        <div
+        class="grid lg:grid-cols-[340px_1fr] h-[calc(92vh-88px)]">
+
+            <!-- Left -->
+
+            <aside class="border-r border-white/10 p-8 overflow-y-auto">
+
+    <img
+    [src]="project.thumbnail"
+    class="rounded-xl mb-6">
+
+    <p class="text-zinc-400 leading-7">
+
+        {{project.description}}
+
+    </p>
+
+    <div class="mt-8 space-y-6">
+
+        <div>
+
+            <p class="text-zinc-500">
+
+                Duration
+
+            </p>
+
+            <h4>
+
+                {{project.duration}}
+
+            </h4>
+
+        </div>
+
+        <div>
+
+            <p class="text-zinc-500">
+
+                Status
+
+            </p>
+
+            <h4>
+
+                {{project.status}}
+
+            </h4>
+
+        </div>
+
+        <div>
+
+            <p class="text-zinc-500">
+
+                Users
+
+            </p>
+
+            <h4>
+
+                {{project.users}}
+
+            </h4>
+
+        </div>
+
+    </div>
+
+</aside>
+
+            <!-- Right -->
+
+            <main
+class="overflow-y-auto">
+
+    <!-- Hero Screenshot --> 
+
+    <div class="p-8">
+
+       <img
+    [src]="selectedImage"
+    class="w-full rounded-2xl border border-white/10 transition-all duration-300">
+
+    </div>
+    <!-- Tech Stack Chips -->
+    <div class="px-8 pb-8 flex flex-wrap gap-3">
+
+    @for(tech of project.technologies; track tech.name){
+
+        <span
+            class="px-4 py-2 rounded-full text-sm font-medium" [ngClass]="tech.color">
+
+            {{ tech.name }}
+
+        </span>
+
+    }
+
+</div>
+
+    <!-- Thumbnail Gallery -->
+    <div class="flex gap-4 px-8 pb-8 overflow-x-auto">
+
+    @for(image of project.gallery; track image){
+
+        <button (click)="selectedImage = image" class="rounded-xl overflow-hidden border-2 transition-all duration-300" [class.border-pink-500]="selectedImage === image" [class.border-white]="selectedImage !== image">
+           
+            <img [src]="image" class="w-40 h-24 object-cover hover:scale-105 transition-transform duration-300">
+        </button>
+
+    }
+
+</div>
+<!-- Tab Bar -->
+<div
+class="border-t border-white/10">
+
+    <nav class="flex gap-6 px-8 border-t border-white/10">
+
+    @for(tab of tabs; track tab){
+
+        <button
+
+            (click)="setTab(tab)"
+
+            class="py-5 capitalize border-b-2 transition-all duration-300"
+
+            [class.border-pink-500]="activeTab === tab"
+            [class.text-pink-500]="activeTab === tab"
+            [class.border-transparent]="activeTab !== tab">
+
+            {{ tab }}
+
+        </button>
+
+    }
+
+</nav>
+<div class="p-8">
+
+    @switch(activeTab){
+
+        @case('overview'){
+
+            <div class="space-y-10">
+
+    <div class="glass-card p-6">
+
+    <h3 class="text-xl font-semibold mb-3">
+
+        The Problem
+
+    </h3>
+
+    <p class="text-zinc-400 leading-8">
+
+        {{project.overview.problem}}
+
+    </p>
+
+</div>
+
+    <div class="glass-card p-6">
+
+    <h3 class="text-xl font-semibold mb-3">
+
+        The Solution
+
+    </h3>
+
+    <p class="text-zinc-400 leading-8">
+
+        {{project.overview.solution}}
+
+    </p>
+
+</div>
+
+    <div class="glass-card p-6">
+
+    <h3 class="text-xl font-semibold mb-3">
+
+        Project Outcome
+
+    </h3>
+
+    <p class="text-zinc-400 leading-8">
+
+        {{project.overview.outcome}}
+
+    </p>
+
+</div>
+<div class="grid grid-cols-3 gap-6 mt-8">
+
+    <div class="glass-card p-6 text-center">
+
+        <h3 class="text-3xl font-bold text-pink-500">
+
+            {{project.users}}
+
+        </h3>
+
+        <p class="text-zinc-400">
+
+            Users
+
+        </p>
+
+    </div>
+
+    <div class="glass-card p-6 text-center">
+
+        <h3 class="text-3xl font-bold text-blue-500">
+
+            {{project.teamSize}}
+
+        </h3>
+
+        <p class="text-zinc-400">
+
+            Team
+
+        </p>
+
+    </div>
+
+    <div class="glass-card p-6 text-center">
+
+        <h3 class="text-3xl font-bold text-green-500">
+
+            {{project.status}}
+
+        </h3>
+
+        <p class="text-zinc-400">
+
+            Status
+
+        </p>
+
+    </div>
+
+</div>
+</div>
+
+        }
+
+        @case('features'){
+
+           <div class="grid lg:grid-cols-2 gap-6">
+
+    @for(feature of project.features; track feature.title){
+
+        <div
+            class="glass-card p-6 card-hover">
+
+            <div class="flex items-start gap-4">
+
+                <div
+                    class="w-14 h-14 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center">
+
+                    <!-- Icon -->
+
+                    <span class="text-2xl">
+
+                        {{ getFeatureIcon(feature.icon) }}
+
+                    </span>
+
+                </div>
+
+                <div class="flex-1">
+
+                    <h3 class="text-xl font-semibold mb-2">
+
+                        {{ feature.title }}
+
+                    </h3>
+
+                    <p class="text-zinc-400 leading-7">
+
+                        {{ feature.description }}
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+        
+    }
+<div class="mt-12">
+
+    <h3 class="text-2xl font-bold mb-6">
+
+        Core Modules
+
+    </h3>
+
+    <div class="flex flex-wrap gap-3">
+
+        @for(tech of project.technologies; track tech.name){
+
+            <span
+                class="tech-badge">
+
+                {{ tech.name }}
+
+            </span>
+
+        }
+
+    </div>
+
+</div>
+</div>
+
+        }
+
+        @case('architecture'){
+
+           <div class="grid lg:grid-cols-2 gap-10">
+
+    <!-- Left -->
+
+    <div class="glass-card p-8">
+
+        <h3 class="text-2xl font-bold mb-8">
+
+            System Flow
+
+        </h3>
+
+        <div class="space-y-5">
+
+            <div class="architecture-node border-pink-500/30">
+
+                {{ project.architecture.frontend }}
+
+            </div>
+
+            <!-- <div class="architecture-arrow">↓</div>
+
+            <div class="architecture-node border-blue-500/30">
+
+                HTTP Client
+
+            </div> -->
+
+            <div class="architecture-arrow">↓</div>
+
+            <div class="architecture-node border-blue-500/30">
+
+                {{ project.architecture.api }}
+
+            </div>
+
+            <div class="architecture-arrow">↓</div>
+
+            <div class="architecture-node border-violet-500/30">
+
+                {{ project.architecture.backend }}
+
+            </div>
+
+            <div class="architecture-arrow">↓</div>
+
+            <div class="architecture-node">
+
+                Entity Framework Core
+
+            </div>
+
+            <div class="architecture-arrow">↓</div>
+
+            <div class="architecture-node border-green-500/30">
+
+                {{ project.architecture.database }}
+
+            </div>
+
+        </div>
+<div class="glass-card p-6 mt-8">
+
+    <h3 class="text-xl font-semibold mb-4">
+
+        Application Layers
+
+    </h3>
+
+    <ul class="space-y-3 text-zinc-400">
+
+        <li><strong>Frontend:</strong> Handles the user interface and client-side interactions.</li>
+
+        <li><strong>API:</strong> Processes requests, validates data, and exposes REST endpoints.</li>
+
+        <li><strong>Business Layer:</strong> Contains the application logic and services.</li>
+
+        <li><strong>Database:</strong> Stores users, bookings, payments, and application data.</li>
+
+    </ul>
+
+</div>
+    </div>
+
+    <!-- Right -->
+
+    <div class="glass-card p-8">
+
+        <h3 class="text-2xl font-bold mb-8">
+
+            Architecture Highlights
+
+        </h3>
+
+        <div class="space-y-4">
+
+            <div
+                class="flex items-center gap-4">
+
+                <span class="text-pink-500">
+
+                    ✓
+
+                </span>
+
+                {{ project.architecture.authentication }}
+
+            </div>
+
+            @for(pattern of project.architecture.patterns; track pattern){
+
+                <div
+                    class="flex items-center gap-4">
+
+                    <span class="text-pink-500">
+
+                        ✓
+
+                    </span>
+
+                    {{ pattern }}
+
+                </div>
+
+            }
+
+        </div>
+
+    </div>
+
+</div>
+
+        }
+
+        @case('challenges'){
+
+            <div class="space-y-8">
+
+    @for(challenge of project.challenges; track challenge.title){
+
+        <div class="glass-card p-8">
+
+            <div class="grid lg:grid-cols-3 gap-8">
+
+                <div>
+
+                    <span
+                    class="text-red-400 text-sm font-semibold uppercase">
+
+                        Challenge
+
+                    </span>
+
+                    <h3
+                    class="text-xl font-bold mt-3">
+
+                        {{challenge.title}}
+
+                    </h3>
+
+                    <p
+                    class="text-zinc-400 mt-4 leading-7">
+
+                        {{challenge.problem}}
+
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <span
+                    class="text-blue-400 text-sm font-semibold uppercase">
+
+                        Solution
+
+                    </span>
+
+                    <p
+                    class="text-zinc-400 mt-4 leading-7">
+
+                        {{challenge.solution}}
+
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <span
+                    class="text-green-400 text-sm font-semibold uppercase">
+
+                        Impact
+
+                    </span>
+
+                    <p
+                    class="text-zinc-400 mt-4 leading-7">
+
+                        {{challenge.impact}}
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    }
+<div class="glass-card p-8 mt-8">
+
+    <h3
+    class="text-2xl font-bold mb-6">
+
+        Key Takeaways
+
+    </h3>
+
+    <div class="grid grid-cols-2 gap-6">
+
+        <div>
+
+            ✓ Problem Solving
+
+        </div>
+
+        <div>
+
+            ✓ Clean Architecture
+
+        </div>
+
+        <div>
+
+            ✓ API Design
+
+        </div>
+
+        <div>
+
+            ✓ Database Optimization
+
+        </div>
+
+        <div>
+
+            ✓ Authentication
+
+        </div>
+
+        <div>
+
+            ✓ Responsive UI
+
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+        }
+
+        @case('lessons'){
+
+            <!-- Lessons -->
+             <div class="grid lg:grid-cols-3 gap-6">
+
+    <!-- Technical -->
+
+    <div class="glass-card p-6">
+
+        <div class="flex items-center gap-3 mb-6">
+
+            <div
+                class="w-12 h-12 rounded-xl bg-pink-500/10 flex items-center justify-center">
+
+                💻
+
+            </div>
+
+            <h3 class="text-xl font-bold">
+
+                Technical Growth
+
+            </h3>
+
+        </div>
+
+        <div class="space-y-4">
+
+            @for(item of project.lessons.technical; track item){
+
+                <div class="flex gap-3">
+
+                    <span class="text-pink-500">
+
+                        ✓
+
+                    </span>
+
+                    <span class="text-zinc-400">
+
+                        {{item}}
+
+                    </span>
+
+                </div>
+
+            }
+
+        </div>
+
+    </div>
+
+    <!-- Process -->
+
+    <div class="glass-card p-6">
+
+        <div class="flex items-center gap-3 mb-6">
+
+            <div
+                class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center">
+
+                ⚙️
+
+            </div>
+
+            <h3 class="text-xl font-bold">
+
+                Development Process
+
+            </h3>
+
+        </div>
+
+        <div class="space-y-4">
+
+            @for(item of project.lessons.process; track item){
+
+                <div class="flex gap-3">
+
+                    <span class="text-blue-500">
+
+                        ✓
+
+                    </span>
+
+                    <span class="text-zinc-400">
+
+                        {{item}}
+
+                    </span>
+
+                </div>
+
+            }
+
+        </div>
+
+    </div>
+
+    <!-- Future -->
+
+    <div class="glass-card p-6">
+
+        <div class="flex items-center gap-3 mb-6">
+
+            <div
+                class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center">
+
+                🚀
+
+            </div>
+
+            <h3 class="text-xl font-bold">
+
+                Future Enhancements
+
+            </h3>
+
+        </div>
+
+        <div class="space-y-4">
+
+            @for(item of project.lessons.future; track item){
+
+                <div class="flex gap-3">
+
+                    <span class="text-green-500">
+
+                        ✓
+
+                    </span>
+
+                    <span class="text-zinc-400">
+
+                        {{item}}
+
+                    </span>
+
+                </div>
+
+            }
+            
+
+        </div>
+        
+    </div>
+<div class="glass-card p-8 mt-8">
+
+    <h2 class="text-2xl font-bold mb-4">
+
+        Final Reflection
+
+    </h2>
+
+    <p class="text-zinc-400 leading-8">
+
+        This project strengthened my expertise in full-stack software development,
+        particularly in designing scalable architectures, building secure REST APIs,
+        and developing responsive Angular applications. It also reinforced the
+        importance of clean code, reusable components, and planning for future
+        scalability.
+
+    </p>
+
+</div>
+</div>
+
+        }
+
+    }
+
+</div>
+
+</div>
+
+</main>
+
+        </div>
+
+    </div>
+
+</div>
+
+}

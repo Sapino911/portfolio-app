@@ -18,10 +18,17 @@
         </div>
         <div class="">
             <h3>Top Languages</h3>
-            <p class="ps-4 mt-14">Typescript 72%</p>
-            <p class="ps-4 mt-14">C# 70%</p>
-            <p class="ps-4 mt-14">SQL 66%</p>
-            <p class="ps-4 mt-14">HTML 42%</p>
-            <p class="ps-4 mt-12">CSS 22%</p>
+            @for(language of languages; track language.title){
+                <div class="flex ps-4 mt-10 gap-12 items-center justify-items-between">
+                    <div class="">
+                        <span>{{ language.title }}</span>
+                    </div>
+                    <div class="w-full h-2 rounded-full" [ngClass]="language.bgColor">
+                        <div class="h-2 rounded-full" [ngClass]="language.value" [ngClass]="language.topColor"></div>
+                    </div>
+                    <span>{{ language.value }}</span>
+            </div> 
+            }
+                      
         </div>    
 </div>
