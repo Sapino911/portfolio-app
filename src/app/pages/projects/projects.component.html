@@ -1,6 +1,6 @@
 @for(project of projects; track project.id){
 
-    <app-project-card
+    <app-project-card class="object-cover"
         [project]="project"
         (viewDetails)="openProject($event)">
     </app-project-card>
@@ -8,7 +8,7 @@
 
 }
 
-<section id="projects" class="py-0 mb-8">
+<!-- <section id="projects" class="py-0 mb-8">
     <div class="section-container">
         <h1 class="section-subtitle text-white uppercase font-semibold mb-6">
             <span class="text-xs bg-pink-500 rounded-full px-1.5 mr-4"></span> All Projects
@@ -26,9 +26,8 @@
                     </div>
                     <div class="px-6">
                         <ul class="flex gap-4 items-center text-white leading-6">
-                            <li class="tech-badge">{{ project.technologies[0] }}</li>
-                            <li class="tech-badge">{{ project.technologies[1] }}</li>
-                            <li class="tech-badge">{{ project.technologies[2] }}</li>
+                            
+                            <li class="tech-badge" >{{ project.technologies }}</li>
                         </ul>
                     </div>
                     <div class="grid grid-cols-2 p-6 gap-4 border-t-2 card-hover justify-items-center items-center border-[#ffffff14] mt-6">
@@ -39,7 +38,7 @@
          }
             </div>
     </div>
-</section>
+</section> -->
 
 @if(selectedProject){
 

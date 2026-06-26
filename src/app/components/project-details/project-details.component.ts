@@ -1,21 +1,23 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { Project } from '../../core/models/project.model';
-import { Output, EventEmitter } from '@angular/core';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-project-details',
   standalone: true,
-  imports: [],
+  imports: [NgClass],
   templateUrl: './project-details.component.html',
   styleUrl: './project-details.component.scss'
 })
-export class ProjectDetailsComponent {
+export class ProjectDetailsComponent implements OnChanges {
 
    @Input() project!: Project;
 
   @Input() isOpen = false;
 
   @Output()
+
+  selectedImage!: string;
 
 close = new EventEmitter<void>();
 
@@ -24,17 +26,63 @@ closeModal(): void {
     this.close.emit();
 
 }
+//Implement OnChanges so that whenever a different project is opened, the hero image is reset
+ ngOnChanges(changes: SimpleChanges): void {
 
-activeTab:
-'overview'
-| 'features'
-| 'architecture'
-| 'challenges'
-| 'lessons'
-= 'overview';
+    if (changes['project'] && this.project) {
+      this.selectedImage = this.project.heroImage;
+    }
 
-setTab(tab: typeof this.activeTab): void {
+  }
+
+
+
+
+
+
+tabs = [
+  'overview',
+  'features',
+  'architecture',
+  'challenges',
+  'lessons'
+] as const;
+
+activeTab = 'overview';
+
+setTab(tab: typeof this.tabs[number]) {
   this.activeTab = tab;
+}
+
+getFeatureIcon(icon: string): string {
+
+  switch (icon) {
+
+    case 'calendar':
+      return '📅';
+
+    case 'credit-card':
+      return '💳';
+
+    case 'dashboard':
+      return '📊';
+
+    case 'users':
+      return '👥';
+
+    case 'music':
+      return '🎵';
+
+    case 'settings':
+      return '⚙️';
+
+    case 'reports':
+      return '📈';
+
+    default:
+      return '✨';
+  }
+
 }
   
 /*   protected readonly badges = [

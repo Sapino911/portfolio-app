@@ -24,13 +24,14 @@ export const PROJECTS: Project[] = [
 
     thumbnail:"assets/projects/otcmvs/thumb.png",
 
-    heroImage:"assets/projects/otcmvs/dashboard.png",
+    heroImage:"..//public/otcmvs-db.png",
 
-    gallery:[
-        "assets/projects/otcmvs/dashboard.png",
-        "assets/projects/otcmvs/bookings.png",
-        "assets/projects/otcmvs/payments.png",
-        "assets/projects/otcmvs/reports.png"
+    gallery: [
+        '..//public/otcmvs-db.png',
+        '..//public/otcmvs-um.png',
+        '..//public/otcmvs-sm.png',
+        '..//public/otcmvs-subm.png',
+        '..//public/otcmvs-pmnt.png'
     ],
 
     github:"GitHub",
@@ -91,55 +92,144 @@ export const PROJECTS: Project[] = [
             "Manage monthly studio memberships.",
 
             icon:"credit-card"
-        }
-
-    ],
-
-    architecture:{
-
-        frontend:"Angular 18",
-
-        backend:"ASP.NET Core 8",
-
-        database:"SQL Server",
-
-        authentication:"JWT"
-
-    },
-
-    challenges:[
-
-        {
-
-            title:"Preventing double bookings",
-
-            solution:
-            "Implemented server-side booking validation."
-
         },
 
         {
+            title:"User Management",
 
-            title:"Payment tracking",
+            description:
+            "Secure role-based access for admins and staff...",
 
-            solution:
-            "Built transaction history with status updates."
+            icon:"credit-card"
+        },
 
+        {
+            title:"Analytics Dashboard",
+
+            description:
+            " View booking trends and revenue statistics",
+
+            icon:"credit-card"
         }
 
     ],
 
-    lessons:[
+    architecture: {
 
-        "Importance of clean architecture",
+    frontend: "Angular 18",
 
-        "Optimizing SQL queries",
+    backend: "ASP.NET Core 8",
 
-        "Angular standalone components",
+    api: "RESTful API",
 
-        "Role-based authentication"
+    database: "SQL Server",
+
+    authentication: "JWT Authentication",
+
+    patterns: [
+
+        "Repository Pattern",
+
+        "Dependency Injection",
+
+        "Clean Architecture",
+
+        "Entity Framework Core",
+
+        "Role-Based Authorization"
 
     ]
+
+},
+
+    challenges: [
+
+{
+
+    title:"Booking Conflicts",
+
+    problem:
+    "Artists could accidentally book the same recording slot.",
+
+    solution:
+    "Implemented server-side validation together with real-time availability checking.",
+
+    impact:
+    "Prevented duplicate bookings."
+
+},
+
+{
+
+    title:"Payment Tracking",
+
+    problem:
+    "Payments were difficult to reconcile manually.",
+
+    solution:
+    "Built transaction history with payment statuses and invoice generation.",
+
+    impact:
+    "Improved payment visibility."
+
+},
+
+{
+
+    title:"Scalability",
+
+    problem:
+    "The application needed to support future modules.",
+
+    solution:
+    "Implemented Clean Architecture and dependency injection.",
+
+    impact:
+    "Made the system modular and easier to extend."
+
+}
+
+],
+
+    lessons: {
+
+    technical: [
+
+        "Improved understanding of Angular standalone architecture",
+
+        "Applied Clean Architecture principles",
+
+        "Optimized SQL queries for better performance",
+
+        "Implemented JWT authentication securely"
+
+    ],
+
+    process: [
+
+        "Designed reusable Angular components",
+
+        "Separated concerns between UI and business logic",
+
+        "Created reusable DTOs and services",
+
+        "Improved API documentation"
+
+    ],
+
+    future: [
+
+        "Integrate SignalR for real-time updates",
+
+        "Deploy on Azure App Service",
+
+        "Add CI/CD pipelines",
+
+        "Introduce automated testing"
+
+    ]
+
+}
 
 }
 

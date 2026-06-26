@@ -194,17 +194,21 @@ body {
     }
 
     .card-hover {
-    transition: all .3s ease;
-    }
 
-    .card-hover:hover {
+    transition: all .35s ease;
+
+}
+
+.card-hover:hover {
+
     transform: translateY(-6px);
 
-    border-color: rgba(255,45,141,.3);
+    border-color: rgba(255,45,141,.35);
 
     box-shadow:
-        0 0 25px rgba(255,45,141,.15);
-    }
+        0 15px 40px rgba(255,45,141,.12);
+
+}
 
     .section-divider {
     width: 100%;
@@ -234,5 +238,30 @@ body {
         transform: translateY(0);
     }
     }
+
+    .architecture-node{
+
+    @apply
+        glass-card
+        p-4
+        text-center
+        font-medium;
+}
+
+.architecture-arrow{
+
+    @apply
+        text-3xl
+        text-pink-500
+        text-center;
+}
+
+.project-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(5, 8, 22, 0.95);
+    backdrop-filter: blur(12px);
+}
 
 }

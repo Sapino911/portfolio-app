@@ -74,7 +74,7 @@ export interface Project {
   features: Feature[];
   architecture: Architecture;
   challenges: Challenge[];
-  lessons: string[];
+  lessons: Lessons;
 }
 
 export interface Technology {
@@ -96,13 +96,39 @@ export interface Feature {
 }
 
 export interface Architecture {
+
   frontend: string;
+
   backend: string;
+
+  api: string;
+
   database: string;
+
   authentication: string;
+
+  patterns: string[];
+
 }
 
 export interface Challenge {
-  title: string;
-  solution: string;
+
+    title: string;
+
+    problem: string;
+
+    solution: string;
+
+    impact: string;
+
+}
+
+export interface Lessons {
+
+  technical: string[];
+
+  process: string[];
+
+  future: string[];
+
 }
