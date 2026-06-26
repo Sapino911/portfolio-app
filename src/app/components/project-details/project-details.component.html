@@ -1,4 +1,4 @@
-<section id="featured-project" class="py-6">
+<!-- <section id="featured-project" class="py-6">
     <div class="section-container">
         <div class="glass-card border border-[#ff2d8d4d] grid lg:grid-cols-[1fr_2fr] gap-12 p-6">
             
@@ -243,3 +243,38 @@
         </div>
     </div>
 </section>
+ -->
+
+@if(isOpen){
+
+<div
+class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex justify-center items-center">
+
+<div
+class="glass-card w-[95%] h-[92vh] overflow-hidden rounded-3xl">
+
+<div class="flex justify-between items-center p-6 border-b border-white/10">
+
+    <h2 class="text-2xl font-bold">
+        {{project.title}}
+    </h2>
+
+    <button
+
+    (click)="closeModal()"
+
+    class="text-3xl hover:text-pink-500">
+
+    ×
+
+</button>
+
+</div>
+
+<!-- Body -->
+
+</div>
+
+</div>
+
+}

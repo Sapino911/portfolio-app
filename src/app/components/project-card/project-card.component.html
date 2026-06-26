@@ -7,7 +7,7 @@
                     <img class="w-full h-full rounded-xl" src="..//public/otcmvs-db.png">
                 </div>
                 <div class="grid grid-cols-1 items-center">
-                    <div class="grid grid-cols-3 gap-4 ">
+                    <div class="grid grid-cols-3 gap-4 "><!-- {{project.title}} -->
                         <div class="tech-badge">
                             <h4 class="text-pink-500 text-2xl font-bold">8+</h4>
                             <p class="text-zinc-400">Modules</p>
@@ -48,7 +48,7 @@
                             <button class="secondary-btn">
                                 Git Repository
                             </button>
-                            <button (click)="openProjectModal()"  class="secondary-btn">
+                            <button (click)="onViewDetails()"  class="secondary-btn">
                                 View Details
                             </button>
                         </div>
@@ -58,7 +58,9 @@
     </div>
 </section>
 
- @if(showProjectModal) {  
+
+
+<!--  @if(showProjectModal) {  
   <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
       
     <app-project-details/>
@@ -69,4 +71,15 @@
     </button>
   </div>  
   
-} 
+}  -->
+<!-- @if(selectedProject){
+
+<app-project-details
+
+    [project]="selectedProject"
+
+    [isOpen]="showProjectModal">
+
+</app-project-details>
+
+} -->

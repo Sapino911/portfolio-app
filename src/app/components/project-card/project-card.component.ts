@@ -1,18 +1,24 @@
-import { Component } from '@angular/core';
-import { ProjectDetailsComponent } from '../project-details/project-details.component';
-
+import { Component, Input } from '@angular/core';
+import { Output, EventEmitter } from '@angular/core';
+import { Project } from '../../core/models/project.model';
 
 @Component({
   selector: 'app-project-card',
   standalone: true,
-  imports: [ProjectDetailsComponent],
+  imports: [ ],
   templateUrl: './project-card.component.html',
   styleUrl: './project-card.component.scss'
 })
 export class  ProjectCardComponent {
+@Input() project!: Project;
 
+@Output() viewDetails = new EventEmitter<Project>();
 
-   showProjectModal = false;
+onViewDetails() {
+  this.viewDetails.emit(this.project);
+}
+
+  /*  showProjectModal = false;
    selectedProduct: any = null;
    openProjectModal(){
 
@@ -22,5 +28,30 @@ export class  ProjectCardComponent {
   closeProjectModal() {
 
     this.showProjectModal = false;
-  }
+  } */
+/* @Input() project!: Project;
+ @Input() isOpen = false; */
+   /*  projects = PROJECTS;
+    
+      selectedProject: Project | null = null;
+    
+      showProjectModal = false;
+    
+      openProject(project: Project): void {
+    
+      this.selectedProject = project;
+    
+      this.showProjectModal = true;
+    
+    }
+    
+      closeProject(): void {
+    
+        this.showProjectModal = false;
+    
+        this.selectedProject = null;
+    
+      } */
+
+  
 }
