@@ -42,6 +42,49 @@
   liveDemo: string;
 
 } */
+
+/* export interface Project {
+
+  id: number;
+
+  title: string;
+
+  subtitle: string;
+
+  summary: string;
+
+  featured: boolean;
+
+  metrics: {
+
+    users: number;
+
+    modules: number;
+
+    features: number;
+
+    duration: string;
+
+  };
+
+  screenshots: {
+
+    name: string;
+
+    image: string;
+
+  }[];
+
+  technologies: Technology[];
+
+  features: string[];
+
+  github: string;
+
+  demo: string;
+
+} */
+
 export interface Project {
 
   // Basic Information
@@ -75,6 +118,13 @@ export interface Project {
   architecture: Architecture;
   challenges: Challenge[];
   lessons: Lessons;
+} 
+
+export interface Screenshot {
+    id:number;
+    title:string;
+    description:string;
+    image:string;
 }
 
 export interface Technology {

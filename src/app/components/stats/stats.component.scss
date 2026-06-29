@@ -1,0 +1,19 @@
+.language-bar{
+
+    width:0;
+
+    animation:
+
+    grow .9s ease forwards;
+
+}
+
+@keyframes grow{
+
+from{
+
+width:0;
+
+}
+
+}
