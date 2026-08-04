@@ -1,0 +1,183 @@
+<app-card>
+
+    <!-- Header -->
+
+    <div class="flex items-start justify-between">
+
+        <div>
+
+            <div class="flex items-center gap-3">
+
+                <div
+                    class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
+
+                    📦
+
+                </div>
+
+                <div>
+
+                    <h3
+                        class="text-xl font-semibold text-white">
+
+                        {{ repository().name }}
+
+                    </h3>
+
+                    <p
+                        class="text-sm text-primary">
+
+                        {{ repository().visibility | titlecase }}
+
+                        Repository
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        @if(repository().featured){
+
+            <span
+                class="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">
+
+                ⭐ Featured
+
+            </span>
+
+        }
+
+    </div>
+
+    <!-- Description -->
+
+    <p
+        class="mt-5 leading-7 text-muted">
+
+        {{ repository().description }}
+
+    </p>
+
+    <!-- Technologies -->
+
+    <div
+        class="mt-6 flex flex-wrap gap-2">
+
+        @for(topic of repository().topics; track topic){
+
+            <app-tech-badge>
+
+                {{ topic }}
+
+            </app-tech-badge>
+
+        }
+
+    </div>
+
+    <!-- Repository Stats -->
+
+    <div
+        class="mt-8 grid grid-cols-4 gap-4 border-y border-border py-5">
+
+        <div>
+
+            <p class="text-xs text-muted">
+
+                Stars
+
+            </p>
+
+            <p class="mt-1 font-semibold">
+
+                ⭐ {{ repository().stargazers_count }}
+
+            </p>
+
+        </div>
+
+        <div>
+
+            <p class="text-xs text-muted">
+
+                Forks
+
+            </p>
+
+            <p class="mt-1 font-semibold">
+
+                🍴 {{ repository().forks_count }}
+
+            </p>
+
+        </div>
+
+        <div>
+
+            <p class="text-xs text-muted">
+
+                Language
+
+            </p>
+
+            <p class="mt-1 font-semibold">
+
+                {{ repository().language }}
+
+            </p>
+
+        </div>
+
+        <div>
+
+            <p class="text-xs text-muted">
+
+                Updated
+
+            </p>
+
+            <p class="mt-1 font-semibold">
+
+                {{ updatedDate() | date:'MMM yyyy' }}
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Actions -->
+
+    <div
+        class="mt-6 flex gap-3">
+
+        @if(repository().homepage){
+
+            <app-button>
+
+                🌍 Live Demo
+
+            </app-button>
+
+        }
+
+        <app-button
+            variant="outline">
+
+            🐙 View Code
+
+        </app-button>
+
+        <app-button
+            variant="secondary">
+
+            📖 Details
+
+        </app-button>
+
+    </div>
+
+</app-card>

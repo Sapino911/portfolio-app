@@ -1,0 +1,6 @@
+src/assets/images/seo
+
+├── og-image.png
+├── favicon.png
+├── apple-touch-icon.png
+└── profile.png

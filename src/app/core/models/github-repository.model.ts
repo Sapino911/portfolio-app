@@ -1,27 +1,29 @@
 export interface GithubRepository {
 
-    id: number;
+    id:number;
 
-    name: string;
+    name:string;
 
-    description: string;
+    description:string;
 
-    html_url: string;
+    html_url:string;
 
-    homepage: string;
+    homepage?:string;
 
-    language: string;
+    language:string;
 
-    stargazers_count: number;
+    stargazers_count:number;
 
-    forks_count: number;
+    forks_count:number;
 
-    topics: string[];
+    updated_at:string;
 
-    updated_at: string;
+    topics:string[];
 
-    archived: boolean;
+    visibility:'public'|'private';
 
-    fork: boolean;
+    featured:boolean;
+
+    fork:boolean;
 
 }

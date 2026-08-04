@@ -1,0 +1,72 @@
+<div class="grid gap-8 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm lg:grid-cols-[320px_1fr]">
+
+    <!-- LEFT -->
+
+    <div class="flex flex-col items-center text-center">
+
+        <img [src]="profile().avatar_url" [alt]="profile().name"
+            class="h-40 w-40 rounded-full border-4 border-pink-500 ring-4 ring-pink-500/20 object-cover shadow-xl">
+
+        <h2 class="mt-6 text-3xl font-bold">
+
+            {{ profile().name }}
+
+        </h2>
+
+        <p class="mt-2 text-lg text-primary">
+
+            {{ profile().bio }}
+
+        </p>
+
+        <a [href]="profile().html_url" target="_blank"
+            class="mt-6 rounded-xl bg-primary px-6 py-3 font-semibold text-white transition hover:scale-105">
+
+            <span class="flex items-center gap-2">
+
+                <i class="pi pi-github"></i>
+
+                Visit GitHub Profile
+
+            </span>
+
+        </a>
+        <p class="mt-6 text-sm text-gray-400">
+
+            {{ profile().html_url }}
+
+        </p>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div>
+
+        <h3 class="mb-2 text-3xl font-bold">
+            Developer Statistics
+        </h3>
+
+        <p class="mb-8 text-gray-400">
+            Live statistics pulled directly from my GitHub profile.
+        </p>
+
+        <div class="grid grid-cols-2 gap-5">
+
+            <app-github-stat-card icon="📦" title="Repositories" [value]="profile().public_repos">
+            </app-github-stat-card>
+
+            <app-github-stat-card icon="👥" title="Followers" [value]="profile().followers">
+            </app-github-stat-card>
+
+            <app-github-stat-card icon="👤" title="Following" [value]="profile().following">
+            </app-github-stat-card>
+
+            <app-github-stat-card icon="📝" title="Public Gists" [value]="profile().public_gists">
+            </app-github-stat-card>
+
+        </div>
+
+    </div>
+
+</div>

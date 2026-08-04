@@ -8,11 +8,6 @@ export const routes: Routes = [
 },
 
 {
-    /* path:'resume',
-    component:ResumeComponent */
-},
-
-{
     path:'**',
     redirectTo:''
 }

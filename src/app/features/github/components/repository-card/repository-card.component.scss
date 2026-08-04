@@ -1,0 +1,17 @@
+:host {
+    display: block;
+}
+
+app-card {
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+app-card:hover {
+
+    transform: translateY(-8px);
+
+}

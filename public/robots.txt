@@ -1,0 +1,7 @@
+User-agent: *
+
+Allow: /
+
+Sitemap:
+
+https://masegoletsapa.dev/sitemap.xml

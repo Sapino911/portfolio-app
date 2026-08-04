@@ -1,0 +1,28 @@
+<button [type]="type" [disabled]="disabled || loading" (click)="onClick()"
+    class="inline-flex items-center justify-center gap-2 rounded-xl font-medium transition-all duration-300" [ngClass]="{
+
+        'bg-primary text-white hover:opacity-90 px-6 py-3': variant==='primary',
+
+        'bg-surface text-white border border-border px-6 py-3': variant==='secondary',
+
+        'border border-primary text-primary hover:bg-primary hover:text-white px-6 py-3': variant==='outline',
+
+        'bg-red-600 text-white px-6 py-3': variant==='danger',
+
+        'text-sm px-3 py-2': size==='sm',
+
+        'text-base px-6 py-3': size==='md',
+
+        'text-lg px-8 py-4': size==='lg'
+
+    }">
+
+    @if(loading){
+
+    <div class="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
+
+    }
+
+    <ng-content></ng-content>
+
+</button>

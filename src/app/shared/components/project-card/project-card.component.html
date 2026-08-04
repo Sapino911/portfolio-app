@@ -1,0 +1,151 @@
+<app-card class="group">
+
+    <div class="flex items-start justify-between">
+
+        <div>
+
+            <div class="flex items-center gap-3">
+
+                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+
+                    📦
+
+                </div>
+
+                <div>
+
+                    <h3 class="text-xl font-bold">
+
+                        {{ project().title }}
+
+                    </h3>
+
+                    @if(project().subtitle){
+
+                    <p class="text-sm text-primary">
+
+                        {{ project().subtitle }}
+
+                    </p>
+
+                    }
+
+                </div>
+
+            </div>
+
+        </div>
+
+        @if(project().featured){
+
+        <span class="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+
+            ⭐ Featured
+
+        </span>
+
+        }
+
+    </div>
+
+    <p class="mt-6 leading-7 text-muted">
+
+        {{ project().description }}
+
+    </p>
+
+    <div class="mt-6 flex flex-wrap gap-2">
+
+        @for(tech of project().technologies; track tech){
+
+        <app-tech-badge>
+
+            {{ tech }}
+
+        </app-tech-badge>
+
+        }
+
+    </div>
+    <div class="mt-8 grid grid-cols-2 gap-6 md:grid-cols-4">
+
+        <div>
+
+            <p class="text-xs text-muted">Status</p>
+
+            <p class="font-semibold">
+
+                {{ project().status }}
+
+            </p>
+
+        </div>
+
+        <div>
+
+            <p class="text-xs text-muted">Language</p>
+
+            <div class="mt-1 flex items-center gap-2">
+
+                <span class="h-3 w-3 rounded-full" [style.background]="languageColor()">
+                </span>
+
+                {{ project().language }}
+
+            </div>
+
+        </div>
+
+        <div>
+
+            <p class="text-xs text-muted">Stars</p>
+
+            ⭐ {{ project().stars ?? 0 }}
+
+        </div>
+
+        <div>
+
+            <p class="text-xs text-muted">Updated</p>
+
+            {{ project().updatedAt | date:'MMM yyyy' }}
+
+        </div>
+
+    </div>
+
+    <div class="mt-8 flex flex-wrap gap-3">
+
+        @if(project().liveDemo){
+
+        <app-button>
+
+            🌍 Live Demo
+
+        </app-button>
+
+        }
+
+        @if(project().githubUrl){
+
+        <app-button variant="outline">
+
+            🐙 GitHub
+
+        </app-button>
+
+        }
+
+        @if(project().caseStudy){
+
+        <app-button variant="secondary">
+
+            📖 Case Study
+
+        </app-button>
+
+        }
+
+    </div>
+
+</app-card>

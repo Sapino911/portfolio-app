@@ -1,0 +1,52 @@
+<div class="rounded-3xl border border-white/10 bg-white/5 p-8">
+
+    <h2 class="text-2xl font-bold">
+
+        Top Languages
+
+    </h2>
+
+    <p class="mt-2 text-gray-400">
+
+        Languages used across my GitHub repositories.
+
+    </p>
+
+    <div class="mt-8 space-y-6">
+
+        @for(language of languages(); track language.name){
+
+        <div>
+
+            <div class="mb-2 flex justify-between">
+
+                <span class="font-medium">
+
+                    {{ language.name }}
+
+                </span>
+
+                <span class="text-sm text-gray-400">
+
+                    {{ language.percentage }}%
+
+                </span>
+
+            </div>
+
+            <div class="h-3 overflow-hidden rounded-full bg-white/10">
+
+                <div class="h-full rounded-full transition-all duration-1000" [style.width.%]="language.percentage"
+                    [style.background]="language.color">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        }
+
+    </div>
+
+</div>

@@ -1,0 +1,30 @@
+<section class="py-24">
+
+    @if (github.loading()) {
+
+    <p>Loading GitHub...</p>
+
+    } @else {
+
+    @if (github.profile() !== null) {
+
+    <app-github-profile [profile]="github.profile()!">
+    </app-github-profile>
+
+    }
+
+    }
+
+   <!--  @if(github.languages().length){
+
+    <div class="mt-10">
+
+        <app-github-languages [languages]="github.languages()">
+
+        </app-github-languages>
+
+    </div>
+
+    } -->
+
+</section>
