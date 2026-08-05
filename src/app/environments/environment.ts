@@ -2,12 +2,21 @@ export const environment = {
 
     production: false,
 
-    github:{
+    api: {
 
-        username:"Sapino911",
+        baseUrl: 'https://localhost:7250/api'
 
-        apiUrl:"https://api.github.com"
+    },
 
-    }
+    github: {
+
+        username: "Sapino911",
+
+        apiUrl: "https://api.github.com"
+
+    },
+
+
+
 
 };

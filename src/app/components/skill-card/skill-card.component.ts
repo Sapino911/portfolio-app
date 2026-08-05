@@ -1,22 +1,30 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { LucideAngularModule, BriefcaseBusiness, Wrench, Database, Server, Monitor } from 'lucide-angular';
+import { LucideCircleCheck } from '@lucide/angular';
 
 @Component({
   selector: 'app-skill-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, LucideAngularModule],
   templateUrl: './skill-card.component.html',
   styleUrl: './skill-card.component.scss'
 })
 export class SkillCardComponent {
 
-  
+  readonly Monitor = Monitor;
+  readonly Server = Server;
+  readonly Database = Database;
+  readonly Wrench = Wrench;
+  readonly BriefcaseBusiness = BriefcaseBusiness;
+
+
   protected readonly skills = [
-    { icon: '', title: 'Frontend', text: ['Angularjs','Typescript', 'HTML5', 'CSS3/TailwindCss', 'RxJS'] },
-    { icon: '', title: 'Backend', text: ['ASPNET Core 8','Typescript', 'HTML5', 'CSS3/TailwindCss', 'RxJS'] },
-    { icon: '', title: 'Database', text: ['SQL Server','Typescript', 'HTML5', 'CSS3/TailwindCss', 'RxJS'] },
-    { icon: '', title: 'Tools & DevOps', text: ['Git & Github','Typescript', 'HTML5', 'CSS3/TailwindCss', 'RxJS'] },
-    { icon: '', title: 'Business & Analytics', text: ['Nusiness Analytics','Typescript', 'HTML5', 'CSS3/TailwindCss', 'RxJS'] }
+    { icon: Monitor, title: 'Frontend', text: ['Angular', 'Typescript', 'HTML5', 'CSS3/Tailwind Css', 'RxJS'] },
+    { icon: Server, title: 'Backend', text: ['ASP.NET Core 8', 'C#', 'REST APIs', 'JWT Authentication', 'Clean Architecture'] },
+    { icon: Database, title: 'Database', text: ['SQL Server', 'MySQL', 'Entity Framework', 'MongoDB', 'Oracle'] },
+    { icon: Wrench, title: 'Tools & DevOps', text: ['Git', 'GitHub', 'Visual Studio', 'VS Code', 'Swagger/Postman'] },
+    { icon: BriefcaseBusiness, title: 'Business & Analysis', text: ['Requirements Gathering & Analysis', 'Process Mapping', 'UML', 'Agile/Scrum'] }
   ]
 
 }

@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-import {
-  FormBuilder, ReactiveFormsModule, Validators
-} from '@angular/forms';
+import { Component, inject, signal } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ContactService } from '../../core/services/contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -11,28 +10,81 @@ import {
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
-  contactForm: any;
 
-  constructor(private fb: FormBuilder) {
-    this.contactForm = this.fb.group({
+  private readonly fb = inject(FormBuilder);
 
-      name: ['', Validators.required],
+  private readonly contactService = inject(ContactService);
 
-      email: ['', [
-        Validators.required,
-        Validators.email
-      ]],
+  contactForm = this.fb.nonNullable.group({
 
-      subject: ['', Validators.required],
+    name: ['', Validators.required],
 
-      message: ['', Validators.required]
+    email: ['', [
+      Validators.required,
+      Validators.email
+    ]],
+
+    subject: ['', Validators.required],
+
+    message: ['', Validators.required]
+
+  });
+
+  readonly sending = signal(false);
+
+  readonly success = signal(false);
+
+  readonly error = signal<string | null>(null);
+
+  submit(): void {
+
+    if (this.contactForm.invalid) {
+
+      this.contactForm.markAllAsTouched();
+
+      return;
+
+    }
+
+    this.sending.set(true);
+
+    this.success.set(false);
+
+    this.error.set(null);
+
+    this.contactService.send(this.contactForm.getRawValue()).subscribe({
+
+      next: response => {
+
+        this.sending.set(false);
+
+        this.success.set(true);
+
+        this.success.set(true);
+
+        setTimeout(() => {
+
+          this.success.set(false);
+
+        }, 5000);
+
+        this.error.set(null);
+
+        this.contactForm.reset();
+
+      },
+
+      error: error => {
+
+        console.error(error);
+
+        this.sending.set(false);
+
+        this.error.set('Unable to send your message. Please try again.');
+
+      }
 
     });
-  }
-
-  submit() {
-
-    console.log(this.contactForm.value);
 
   }
 
