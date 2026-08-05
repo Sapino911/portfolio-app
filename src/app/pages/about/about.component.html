@@ -5,10 +5,10 @@
         <span class="text-pink-500 font-semibold">
           ABOUT ME
         </span>
-        <h2 class="section-title mt-3 truncate-1-lines md:truncate-3-lines">
+        <h2 class="section-title mt-3">
           Turning Business Problems Into Software Solutions
         </h2>
-        <p class="text-zinc-400 leading-8 mt-6">
+        <p class="text-zinc-400 text-lg leading-8 mt-6">
           I'm a Full Stack Software Developer with over 6 years of
           experience designing and building web applications,
           REST APIs and business management systems.
@@ -24,7 +24,7 @@
 
       <div class="grid grid-cols-2 gap-6">
         @for(highlight of highlights; track highlight.title){
-            <div class="glass-card p-6 card-hover">
+        <div class="glass-card p-6 card-hover">
           <h3 class="text-4xl font-bold" [ngClass]="highlight.textColor">
             {{ highlight.value }}
           </h3>
