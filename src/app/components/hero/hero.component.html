@@ -25,9 +25,9 @@
             Download CV
           </button>
         </div>
-        <div @slideUpAnimation class="flex gap-4 mb-6">
+        <div @slideUpAnimation class="flex gap-4 flex-wrap mb-6">
           @for( badge of badges; track badge.title){
-          <button class="tech-badge">
+          <button class="flex-shrink-1 tech-badge">
             {{ badge.title }}
           </button>
           }
