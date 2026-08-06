@@ -67,7 +67,7 @@
 
             </h2>
 
-            <p class="mt-4 text-lg text-gray-400">
+            <p class="mt-4 text-lg text-zinc-400">
 
                 Have a project in mind or looking for a software developer?
                 I'd love to hear from you.
@@ -99,7 +99,7 @@
 
                         </h4>
 
-                        <a href="mailto:masegoletsapa27@gmail.com" class="mt-2 block text-gray-400 hover:text-primary">
+                        <a href="mailto:masegoletsapa27@gmail.com" class="mt-2 block text-zinc-400 hover:text-primary">
 
                             masegoletsapa27&6gmail.com
 
@@ -116,7 +116,7 @@
 
                         </h4>
 
-                        <a href="tel:+27634654065" class="mt-2 block text-gray-400 hover:text-primary">
+                        <a href="tel:+27634654065" class="mt-2 block text-zinc-400 hover:text-primary">
 
                             +27 63 465 4065
 
@@ -133,11 +133,17 @@
 
                         </h4>
 
-                        <p class="mt-2 text-gray-400">
+                        <p class="mt-2 text-zinc-400">
 
                             Pretoria, South Africa
 
+
                         </p>
+                        <!--  <p class="mt-2 text-zinc-400">
+
+                            🟢 Available for Opportunities
+
+                        </p> -->
 
                     </div>
 
@@ -151,7 +157,7 @@
                         </h4>
 
                         <a href="https://github.com/Sapino911" target="_blank"
-                            class="mt-2 block text-gray-400 hover:text-primary">
+                            class="mt-2 block text-zinc-400 hover:text-primary">
 
                             github.com/Sapino911
 
@@ -207,7 +213,7 @@
                         </label>
 
                         <input type="email" formControlName="email"
-                            class="w-full rounded-xl border border-white/10 bg-white/5 p-4 outline-none transition focus:border-primary" 
+                            class="w-full rounded-xl border border-white/10 bg-white/5 p-4 outline-none transition focus:border-primary"
                             [class.border-red-500]="contactForm.controls.email.invalid && contactForm.controls.email.touched">
                         @if(contactForm.controls.email.invalid &&
                         contactForm.controls.email.touched){
@@ -230,7 +236,7 @@
                         </label>
 
                         <input type="text" formControlName="subject"
-                            class="w-full rounded-xl border border-white/10 bg-white/5 p-4 outline-none transition focus:border-primary" 
+                            class="w-full rounded-xl border border-white/10 bg-white/5 p-4 outline-none transition focus:border-primary"
                             [class.border-red-500]="contactForm.controls.subject.invalid && contactForm.controls.subject.touched">
                         @if(contactForm.controls.subject.invalid &&
                         contactForm.controls.subject.touched){
@@ -253,7 +259,7 @@
                         </label>
 
                         <textarea rows="6" formControlName="message"
-                            class="w-full rounded-xl border border-white/10 bg-white/5 p-4 outline-none transition focus:border-primary" 
+                            class="w-full rounded-xl border border-white/10 bg-white/5 p-4 outline-none transition focus:border-primary"
                             [class.border-red-500]="contactForm.controls.message.invalid && contactForm.controls.message.touched">
 
                         </textarea>
