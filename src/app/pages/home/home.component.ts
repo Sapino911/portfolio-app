@@ -11,6 +11,7 @@ import { GithubSectionComponent } from "../../components/github-section/github-s
 import { SeoService } from '../../core/services/seo.service';
 @Component({
     selector: 'app-home',
+    standalone: true,
     imports: [NavbarComponent, HeroComponent, AboutComponent, SkillCardComponent, ExperienceComponent, ContactComponent, FooterComponent, ProjectsComponent, GithubSectionComponent],
     templateUrl: './home.component.html',
     styleUrl: './home.component.scss'

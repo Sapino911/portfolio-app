@@ -1,11 +1,12 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { LucideAngularModule, BriefcaseBusiness, Wrench, Database, Server, Monitor } from 'lucide-angular';
 import { LucideCircleCheck } from '@lucide/angular';
 
 @Component({
     selector: 'app-skill-card',
-    imports: [CommonModule, LucideAngularModule],
+    standalone: true,
+    imports: [LucideAngularModule],
     templateUrl: './skill-card.component.html',
     styleUrl: './skill-card.component.scss'
 })

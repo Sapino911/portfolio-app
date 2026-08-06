@@ -2,10 +2,11 @@ import { Component, Input } from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
 import { Project } from '../../core/models/project.model';
 import { scaleAnimation } from '../../shared/animations';
-import { LucideAngularModule, CheckLine } from 'lucide-angular';
+import { LucideAngularModule, CircleCheckIcon } from 'lucide-angular';
 
 @Component({
     selector: 'app-project-card',
+    standalone: true,
     imports: [LucideAngularModule],
     animations: [scaleAnimation],
     templateUrl: './project-card.component.html',
@@ -24,7 +25,7 @@ export class ProjectCardComponent {
     this.viewDetails.emit(this.project);
   }
 
-  readonly CheckLine = CheckLine;
+  readonly CircleCheckIcon = CircleCheckIcon;
 
   /*  showProjectModal = false;
    selectedProduct: any = null;

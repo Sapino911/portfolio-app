@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { fadeAnimation, slideUpAnimation } from '../../shared/animations';
+import { CounterComponent } from '../../shared/counter/counter.component';
 
 
 @Component({
     selector: 'app-hero',
-    imports: [],
+    standalone: true,
+  imports: [CounterComponent],
     animations: [slideUpAnimation, fadeAnimation],
     templateUrl: './hero.component.html',
     styleUrl: './hero.component.scss'
