@@ -5,11 +5,10 @@ import { ProjectCardComponent } from "../../../../shared/components/project-card
 import { GithubService } from '../../../../core/services/github.service';
 
 @Component({
-  selector: 'app-featured-projects-grid',
-  standalone: true,
-  imports: [SectionHeaderComponent, ProjectCardComponent],
-  templateUrl: './featured-projects-grid.component.html',
-  styleUrl: './featured-projects-grid.component.scss'
+    selector: 'app-featured-projects-grid',
+    imports: [SectionHeaderComponent, ProjectCardComponent],
+    templateUrl: './featured-projects-grid.component.html',
+    styleUrl: './featured-projects-grid.component.scss'
 })
 export class FeaturedProjectsGridComponent {
 

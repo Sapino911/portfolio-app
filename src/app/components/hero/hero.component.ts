@@ -3,12 +3,11 @@ import { fadeAnimation, slideUpAnimation } from '../../shared/animations';
 
 
 @Component({
-  selector: 'app-hero',
-  standalone: true,
-  imports: [],
-  animations: [slideUpAnimation, fadeAnimation],
-  templateUrl: './hero.component.html',
-  styleUrl: './hero.component.scss'
+    selector: 'app-hero',
+    imports: [],
+    animations: [slideUpAnimation, fadeAnimation],
+    templateUrl: './hero.component.html',
+    styleUrl: './hero.component.scss'
 })
 export class HeroComponent {
   

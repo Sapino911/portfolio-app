@@ -7,11 +7,10 @@ import { SkeletonComponent } from "../../shared/components/skeleton/skeleton.com
 import { GithubProfileComponent } from "../../features/github/components/github-profile/github-profile.component";
 
 @Component({
-  selector: 'app-github-section',
-  standalone: true,
-  imports: [CounterComponent, SkeletonComponent, GithubProfileComponent],
-  templateUrl: './github-section.component.html',
-  styleUrl: './github-section.component.scss'
+    selector: 'app-github-section',
+    imports: [CounterComponent, SkeletonComponent, GithubProfileComponent],
+    templateUrl: './github-section.component.html',
+    styleUrl: './github-section.component.scss'
 })
 export class GithubSectionComponent {
 private githubService = inject(GithubService);

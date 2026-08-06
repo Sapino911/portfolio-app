@@ -6,11 +6,10 @@ import { CommonModule } from '@angular/common';
 import { ButtonComponent } from "../button/button.component";
 
 @Component({
-  selector: 'app-project-card',
-  standalone: true,
-  imports: [CommonModule, CardComponent, TechBadgeComponent, ButtonComponent],
-  templateUrl: './project-card.component.html',
-  styleUrl: './project-card.component.scss'
+    selector: 'app-project-card',
+    imports: [CommonModule, CardComponent, TechBadgeComponent, ButtonComponent],
+    templateUrl: './project-card.component.html',
+    styleUrl: './project-card.component.scss'
 })
 export class ProjectCardComponent {
   project = input.required<ProjectCard>();

@@ -13,11 +13,10 @@ import { FEATURED_REPOSITORIES } from '../../core/utils/featured-repositories';
 import { GithubComponent } from "../../features/github/components/github/github.component";
 
 @Component({
-  selector: 'app-experience',
-  standalone: true,
-  imports: [TimelineComponent, CertificationsComponent, StatsComponent, GithubSectionComponent, SkeletonComponent, LoadingSpinnerComponent, ButtonComponent, RepositoryCardComponent, GithubComponent],
-  templateUrl: './experience.component.html',
-  styleUrl: './experience.component.scss'
+    selector: 'app-experience',
+    imports: [TimelineComponent, CertificationsComponent, StatsComponent, GithubSectionComponent, SkeletonComponent, LoadingSpinnerComponent, ButtonComponent, RepositoryCardComponent, GithubComponent],
+    templateUrl: './experience.component.html',
+    styleUrl: './experience.component.scss'
 })
 export class ExperienceComponent {
 /* 

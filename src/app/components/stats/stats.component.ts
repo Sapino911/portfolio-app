@@ -5,11 +5,10 @@ import { toSignal } from '@angular/core/rxjs-interop';
 
 
 @Component({
-  selector: 'app-stats',
-  standalone: true,
-  imports: [CounterComponent],
-  templateUrl: './stats.component.html',
-  styleUrl: './stats.component.scss'
+    selector: 'app-stats',
+    imports: [CounterComponent],
+    templateUrl: './stats.component.html',
+    styleUrl: './stats.component.scss'
 })
 export class StatsComponent {
   /* languageStats: any; */

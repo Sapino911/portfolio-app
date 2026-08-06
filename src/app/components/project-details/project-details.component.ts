@@ -4,12 +4,11 @@ import { NgClass } from '@angular/common';
 import { fadeAnimation, modalAnimation, scaleAnimation, slideUpAnimation } from '../../shared/animations';
 
 @Component({
-  selector: 'app-project-details',
-  standalone: true,
-  imports: [NgClass],
-  animations: [fadeAnimation, modalAnimation, scaleAnimation, slideUpAnimation],
-  templateUrl: './project-details.component.html',
-  styleUrl: './project-details.component.scss'
+    selector: 'app-project-details',
+    imports: [NgClass],
+    animations: [fadeAnimation, modalAnimation, scaleAnimation, slideUpAnimation],
+    templateUrl: './project-details.component.html',
+    styleUrl: './project-details.component.scss'
 })
 export class ProjectDetailsComponent implements OnChanges {
 

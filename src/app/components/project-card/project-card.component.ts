@@ -5,12 +5,11 @@ import { scaleAnimation } from '../../shared/animations';
 import { LucideAngularModule, CheckLine } from 'lucide-angular';
 
 @Component({
-  selector: 'app-project-card',
-  standalone: true,
-  imports: [LucideAngularModule],
-  animations: [scaleAnimation],
-  templateUrl: './project-card.component.html',
-  styleUrl: './project-card.component.scss'
+    selector: 'app-project-card',
+    imports: [LucideAngularModule],
+    animations: [scaleAnimation],
+    templateUrl: './project-card.component.html',
+    styleUrl: './project-card.component.scss'
 })
 export class ProjectCardComponent {
 

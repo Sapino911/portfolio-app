@@ -5,11 +5,10 @@ import { CommonModule } from '@angular/common';
 import { GithubLanguagesComponent } from "../github-languages/github-languages.component";
 
 @Component({
-  selector: 'app-github',
-  standalone: true,
-  imports: [CommonModule, GithubProfileComponent, GithubLanguagesComponent],
-  templateUrl: './github.component.html',
-  styleUrl: './github.component.scss'
+    selector: 'app-github',
+    imports: [CommonModule, GithubProfileComponent, GithubLanguagesComponent],
+    templateUrl: './github.component.html',
+    styleUrl: './github.component.scss'
 })
 export class GithubComponent {
 

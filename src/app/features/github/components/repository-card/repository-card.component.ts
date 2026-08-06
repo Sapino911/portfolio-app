@@ -6,12 +6,11 @@ import { CardComponent } from "../../../../shared/components/card/card.component
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-repository-card',
-  standalone: true,
-  imports: [CommonModule, ButtonComponent, TechBadgeComponent, CardComponent],
-  templateUrl: './repository-card.component.html',
-  styleUrl: './repository-card.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-repository-card',
+    imports: [CommonModule, ButtonComponent, TechBadgeComponent, CardComponent],
+    templateUrl: './repository-card.component.html',
+    styleUrl: './repository-card.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RepositoryCardComponent {
   repository = input.required<GithubRepository>();

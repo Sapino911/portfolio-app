@@ -7,11 +7,10 @@ import { ProjectDetailsComponent } from "../../components/project-details/projec
 import { Project } from '../../core/models/project.model'; */
 
 @Component({
-  selector: 'app-projects',
-  standalone: true,
-  imports: [ProjectCardComponent, ProjectDetailsComponent],
-  templateUrl: './projects.component.html',
-  styleUrl: './projects.component.scss'
+    selector: 'app-projects',
+    imports: [ProjectCardComponent, ProjectDetailsComponent],
+    templateUrl: './projects.component.html',
+    styleUrl: './projects.component.scss'
 })
 export class ProjectsComponent {
 

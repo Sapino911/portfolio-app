@@ -4,11 +4,10 @@ import { LucideAngularModule, BriefcaseBusiness, Wrench, Database, Server, Monit
 import { LucideCircleCheck } from '@lucide/angular';
 
 @Component({
-  selector: 'app-skill-card',
-  standalone: true,
-  imports: [CommonModule, LucideAngularModule],
-  templateUrl: './skill-card.component.html',
-  styleUrl: './skill-card.component.scss'
+    selector: 'app-skill-card',
+    imports: [CommonModule, LucideAngularModule],
+    templateUrl: './skill-card.component.html',
+    styleUrl: './skill-card.component.scss'
 })
 export class SkillCardComponent {
 
