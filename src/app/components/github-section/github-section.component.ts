@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { GithubProfile } from '../../core/models/github.model';
 import { GithubService } from '../../core/services/github.service';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -10,6 +10,7 @@ import { GithubProfileComponent } from "../../features/github/components/github-
     selector: 'app-github-section',
     imports: [CounterComponent, SkeletonComponent, GithubProfileComponent],
     templateUrl: './github-section.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './github-section.component.scss'
 })
 export class GithubSectionComponent {

@@ -1,4 +1,4 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, inject, ChangeDetectionStrategy } from '@angular/core';
 import { TimelineComponent } from "../../components/timeline/timeline.component";
 import { map } from 'rxjs/operators';
 import { CertificationsComponent } from "../../components/certifications/certifications.component";
@@ -16,6 +16,7 @@ import { GithubComponent } from "../../features/github/components/github/github.
     selector: 'app-experience',
     imports: [TimelineComponent, CertificationsComponent, StatsComponent, GithubSectionComponent, SkeletonComponent, LoadingSpinnerComponent, ButtonComponent, RepositoryCardComponent, GithubComponent],
     templateUrl: './experience.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './experience.component.scss'
 })
 export class ExperienceComponent {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { fadeAnimation, slideUpAnimation } from '../../shared/animations';
 import { CounterComponent } from '../../shared/counter/counter.component';
 
@@ -9,6 +9,7 @@ import { CounterComponent } from '../../shared/counter/counter.component';
   imports: [CounterComponent],
     animations: [slideUpAnimation, fadeAnimation],
     templateUrl: './hero.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './hero.component.scss'
 })
 export class HeroComponent {

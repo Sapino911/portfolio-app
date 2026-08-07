@@ -2,12 +2,14 @@ import {
   Component,
   Input,
   OnInit,
-  signal
+  signal,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 @Component({
   selector: 'app-counter',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: './counter.component.html'
 })
 export class CounterComponent implements OnInit {

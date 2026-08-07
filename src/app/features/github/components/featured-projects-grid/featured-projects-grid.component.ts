@@ -1,4 +1,4 @@
-import { Component, computed, inject, input } from '@angular/core';
+import { Component, computed, inject, input, ChangeDetectionStrategy } from '@angular/core';
 import { ProjectCard } from '../../../../core/models/project-card.model';
 import { SectionHeaderComponent } from "../../../../shared/components";
 import { ProjectCardComponent } from "../../../../shared/components/project-card/project-card.component";
@@ -8,6 +8,7 @@ import { GithubService } from '../../../../core/services/github.service';
     selector: 'app-featured-projects-grid',
     imports: [SectionHeaderComponent, ProjectCardComponent],
     templateUrl: './featured-projects-grid.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './featured-projects-grid.component.scss'
 })
 export class FeaturedProjectsGridComponent {

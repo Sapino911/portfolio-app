@@ -1,4 +1,4 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, computed, input, ChangeDetectionStrategy } from '@angular/core';
 import { ProjectCard } from '../../../core/models/project-card.model';
 import { CardComponent } from "../card/card.component";
 import { TechBadgeComponent } from '../tech-badge/tech-badge.component';
@@ -9,6 +9,7 @@ import { ButtonComponent } from "../button/button.component";
     selector: 'app-project-card',
     imports: [CommonModule, CardComponent, TechBadgeComponent, ButtonComponent],
     templateUrl: './project-card.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './project-card.component.scss'
 })
 export class ProjectCardComponent {

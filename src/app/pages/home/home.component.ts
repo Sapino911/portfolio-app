@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { NavbarComponent } from "../../components/navbar/navbar.component";
 import { HeroComponent } from "../../components/hero/hero.component";
 import { AboutComponent } from "../about/about.component";
@@ -14,6 +14,7 @@ import { SeoService } from '../../core/services/seo.service';
     standalone: true,
     imports: [NavbarComponent, HeroComponent, AboutComponent, SkillCardComponent, ExperienceComponent, ContactComponent, FooterComponent, ProjectsComponent, GithubSectionComponent],
     templateUrl: './home.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './home.component.scss'
 })
 export class HomeComponent {

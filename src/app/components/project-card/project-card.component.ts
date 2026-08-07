@@ -1,16 +1,17 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
 import { Project } from '../../core/models/project.model';
 import { scaleAnimation } from '../../shared/animations';
-import { LucideAngularModule, CircleCheckIcon } from 'lucide-angular';
+/* import { LucideAngularModule, CircleCheckIcon } from 'lucide-angular'; */
 
 @Component({
-    selector: 'app-project-card',
-    standalone: true,
-    imports: [LucideAngularModule],
-    animations: [scaleAnimation],
-    templateUrl: './project-card.component.html',
-    styleUrl: './project-card.component.scss'
+  selector: 'app-project-card',
+  standalone: true,
+  imports: [],
+  animations: [scaleAnimation],
+  templateUrl: './project-card.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
+  styleUrl: './project-card.component.scss'
 })
 export class ProjectCardComponent {
 
@@ -25,7 +26,7 @@ export class ProjectCardComponent {
     this.viewDetails.emit(this.project);
   }
 
-  readonly CircleCheckIcon = CircleCheckIcon;
+  /* readonly CircleCheckIcon = CircleCheckIcon; */
 
   /*  showProjectModal = false;
    selectedProduct: any = null;

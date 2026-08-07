@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ProjectCardComponent } from "../../components/project-card/project-card.component";
 import { PROJECTS } from '../../core/data/projects';
 import { Project } from '../../core/models/project.model';
@@ -10,6 +10,7 @@ import { Project } from '../../core/models/project.model'; */
     selector: 'app-projects',
     imports: [ProjectCardComponent, ProjectDetailsComponent],
     templateUrl: './projects.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './projects.component.scss'
 })
 export class ProjectsComponent {

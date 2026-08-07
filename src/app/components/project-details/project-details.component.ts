@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
 import { Project } from '../../core/models/project.model';
 import { NgClass } from '@angular/common';
 import { fadeAnimation, modalAnimation, scaleAnimation, slideUpAnimation } from '../../shared/animations';
@@ -8,6 +8,7 @@ import { fadeAnimation, modalAnimation, scaleAnimation, slideUpAnimation } from 
     imports: [NgClass],
     animations: [fadeAnimation, modalAnimation, scaleAnimation, slideUpAnimation],
     templateUrl: './project-details.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './project-details.component.scss'
 })
 export class ProjectDetailsComponent implements OnChanges {

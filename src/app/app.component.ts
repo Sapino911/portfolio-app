@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { HomeComponent } from "./pages/home/home.component";
@@ -8,6 +8,7 @@ import { ScrollProgressComponent } from "./shared/scroll-progress/scroll-progres
     selector: 'app-root',
     imports: [RouterOutlet, NavbarComponent, HomeComponent, ScrollProgressComponent],
     templateUrl: './app.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './app.component.scss'
 })
 export class AppComponent {

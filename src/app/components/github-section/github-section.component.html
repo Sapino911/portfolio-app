@@ -6,11 +6,11 @@
 
     <div class="grid grid-cols-1 gap-2 items-center justify-items-center mb-4">
         <div>
-            <img [src]="profile?.avatar_url" class="w-24 h-24 rounded-full">
+            <img [src]="$safeNavigationMigration(profile?.avatar_url)" class="w-24 h-24 rounded-full">
         </div>
         <h2>{{profile?.name}}</h2>
         <p>{{profile?.bio}}</p>
-        <p class="text-sm"><a [href]="profile?.html_url" class="hover:text-pink-500 hover:underline"
+        <p class="text-sm"><a [href]="$safeNavigationMigration(profile?.html_url)" class="hover:text-pink-500 hover:underline"
                 target="_blank">{{profile?.html_url}}</a></p>
     </div>
 

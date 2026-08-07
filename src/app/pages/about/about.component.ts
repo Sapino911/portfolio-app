@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CounterComponent } from '../../shared/counter/counter.component';
 import { fadeAnimation, slideUpAnimation } from '../../shared/animations';
 @Component({
@@ -8,6 +8,7 @@ import { fadeAnimation, slideUpAnimation } from '../../shared/animations';
   imports: [NgClass, CounterComponent],
     animations: [fadeAnimation, slideUpAnimation],
     templateUrl: './about.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './about.component.scss'
 })
 export class AboutComponent {
