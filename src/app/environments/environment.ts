@@ -1,10 +1,12 @@
 export const environment = {
-
-    production: false,
+    production: true,
 
     api: {
 
-        baseUrl: 'https://localhost:7250/api'
+        /* baseUrl: 'https://localhost:7250/api' */
+        baseUrl: 'https://masego-api-epahbecmgxaebkeg.southafricanorth-01.azurewebsites.net/api'
+
+
 
     },
 
