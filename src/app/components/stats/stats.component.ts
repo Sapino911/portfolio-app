@@ -7,7 +7,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 @Component({
     selector: 'app-stats',
     standalone: true,
-    imports: [CounterComponent],
+    imports: [],
     templateUrl: './stats.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './stats.component.scss'

@@ -7,7 +7,7 @@ import { GithubLanguagesComponent } from "../github-languages/github-languages.c
 @Component({
     selector: 'app-github',
     standalone: true,
-    imports: [GithubProfileComponent, GithubLanguagesComponent],
+    imports: [GithubProfileComponent],
     templateUrl: './github.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './github.component.scss'

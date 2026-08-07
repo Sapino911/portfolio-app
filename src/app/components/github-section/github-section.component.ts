@@ -3,12 +3,11 @@ import { GithubProfile } from '../../core/models/github.model';
 import { GithubService } from '../../core/services/github.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { CounterComponent } from "../../shared/counter/counter.component";
-import { SkeletonComponent } from "../../shared/components/skeleton/skeleton.component";
 import { GithubProfileComponent } from "../../features/github/components/github-profile/github-profile.component";
 
 @Component({
     selector: 'app-github-section',
-    imports: [CounterComponent, SkeletonComponent, GithubProfileComponent],
+    imports: [CounterComponent, GithubProfileComponent],
     templateUrl: './github-section.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './github-section.component.scss'

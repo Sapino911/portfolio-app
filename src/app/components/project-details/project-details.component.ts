@@ -1,11 +1,10 @@
 import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
 import { Project } from '../../core/models/project.model';
-import { NgClass } from '@angular/common';
 import { fadeAnimation, modalAnimation, scaleAnimation, slideUpAnimation } from '../../shared/animations';
 
 @Component({
     selector: 'app-project-details',
-    imports: [NgClass],
+    imports: [],
     animations: [fadeAnimation, modalAnimation, scaleAnimation, slideUpAnimation],
     templateUrl: './project-details.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
