@@ -4,20 +4,20 @@ import { CounterComponent } from '../../shared/counter/counter.component';
 
 
 @Component({
-    selector: 'app-hero',
-    standalone: true,
+  selector: 'app-hero',
+  standalone: true,
   imports: [CounterComponent],
-    animations: [slideUpAnimation, fadeAnimation],
-    templateUrl: './hero.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
-    styleUrl: './hero.component.scss'
+  animations: [slideUpAnimation, fadeAnimation],
+  templateUrl: './hero.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
+  styleUrl: './hero.component.scss'
 })
 export class HeroComponent {
-  
+
   protected readonly badges = [
-    { icon: '', title: 'Angular'},
-    { icon: '', title: '.Net Core'},
-    { icon: '', title: 'SQL Server'},
-    { icon: '', title: 'Azure'}
+    { icon: '', title: 'Angular' },
+    { icon: '', title: '.Net Core' },
+    { icon: '', title: 'SQL Server' },
+    { icon: '', title: 'Azure' }
   ]
 }
