@@ -4,10 +4,11 @@ import { fadeAnimation, modalAnimation, scaleAnimation, slideUpAnimation } from 
 
 @Component({
     selector: 'app-project-details',
+    standalone: true,
     imports: [],
     animations: [fadeAnimation, modalAnimation, scaleAnimation, slideUpAnimation],
     templateUrl: './project-details.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './project-details.component.scss'
 })
 export class ProjectDetailsComponent implements OnChanges {

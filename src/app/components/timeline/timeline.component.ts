@@ -5,7 +5,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
     standalone: true,
     imports: [],
     templateUrl: './timeline.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './timeline.component.scss'
 })
 export class TimelineComponent {

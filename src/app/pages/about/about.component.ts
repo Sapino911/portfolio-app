@@ -8,7 +8,7 @@ import { fadeAnimation, slideUpAnimation } from '../../shared/animations';
   imports: [NgClass, CounterComponent],
     animations: [fadeAnimation, slideUpAnimation],
     templateUrl: './about.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './about.component.scss'
 })
 export class AboutComponent {

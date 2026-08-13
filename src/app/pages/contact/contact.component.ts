@@ -7,7 +7,7 @@ import { ContactService } from '../../core/services/contact.service';
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './contact.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent {

@@ -14,7 +14,7 @@ import { SeoService } from '../../core/services/seo.service';
     standalone: true,
     imports: [NavbarComponent, HeroComponent, AboutComponent, SkillCardComponent, ExperienceComponent, ContactComponent, FooterComponent, ProjectsComponent, GithubSectionComponent],
     templateUrl: './home.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './home.component.scss'
 })
 export class HomeComponent {

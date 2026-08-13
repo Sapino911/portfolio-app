@@ -9,7 +9,7 @@ import {
 @Component({
   selector: 'app-counter',
   standalone: true,
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './counter.component.html'
 })
 export class CounterComponent implements OnInit {

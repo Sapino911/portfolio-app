@@ -28,6 +28,7 @@
         <div @slideUpAnimation class="flex gap-4 flex-wrap mb-6">
           @for( badge of badges; track badge.title){
           <button class="flex-shrink-1 tech-badge">
+            <!-- <svg [lucideIcon]="badge.icon"></svg> -->
             {{ badge.title }}
           </button>
           }

@@ -4,6 +4,7 @@ import { GithubStatCardComponent } from "../github-stat-card/github-stat-card.co
 
 @Component({
     selector: 'app-github-profile',
+    standalone: true,
     imports: [GithubStatCardComponent],
     templateUrl: './github-profile.component.html',
     styleUrl: './github-profile.component.scss',
