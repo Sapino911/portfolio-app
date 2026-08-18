@@ -5,9 +5,10 @@ import { NavigationService } from '../../core/services/navigation.service';
 
 @Component({
     selector: 'app-navbar',
+    standalone: true,
     imports: [],
     templateUrl: './navbar.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {

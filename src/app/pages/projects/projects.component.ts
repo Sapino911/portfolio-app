@@ -8,9 +8,10 @@ import { Project } from '../../core/models/project.model'; */
 
 @Component({
     selector: 'app-projects',
+    standalone: true,
     imports: [ProjectCardComponent, ProjectDetailsComponent],
     templateUrl: './projects.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './projects.component.scss'
 })
 export class ProjectsComponent {

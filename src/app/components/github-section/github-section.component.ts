@@ -6,36 +6,37 @@ import { CounterComponent } from "../../shared/counter/counter.component";
 import { GithubProfileComponent } from "../../features/github/components/github-profile/github-profile.component";
 
 @Component({
-    selector: 'app-github-section',
-    imports: [CounterComponent, GithubProfileComponent],
-    templateUrl: './github-section.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
-    styleUrl: './github-section.component.scss'
+  selector: 'app-github-section',
+  standalone: true,
+  imports: [CounterComponent, GithubProfileComponent],
+  templateUrl: './github-section.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  styleUrl: './github-section.component.scss'
 })
 export class GithubSectionComponent {
-private githubService = inject(GithubService);
-  profile?:any;
+  private githubService = inject(GithubService);
+  profile?: any;
 
-/*   languageStats = toSignal(
+  /*   languageStats = toSignal(
+  
+      this.githubService.getLanguageStatistics(),
+  
+      {
+  
+          initialValue: []
+  
+      }
+  
+  ); */
 
-    this.githubService.getLanguageStatistics(),
+  ngOnInit() {
 
-    {
-
-        initialValue: []
-
-    }
-
-); */
-
-  ngOnInit(){
-
-  this.githubService.getProfile().subscribe(profile=>{
-    this.profile=profile;
-  /* this.profile?.public_repos
-  this.profile?.bio
-  this.profile?.followers */
-  });
+    this.githubService.getProfile().subscribe(profile => {
+      this.profile = profile;
+      /* this.profile?.public_repos
+      this.profile?.bio
+      this.profile?.followers */
+    });
 
   }
 
@@ -46,12 +47,12 @@ private githubService = inject(GithubService);
     { value: '15+', title: 'Technologies' }
   ];
 
-  protected readonly languages = [    
-    { title: 'C#', value: '100',  topColor: 'bg-purple-500', bgColor: 'bg-purple-500/10'},
-    { title: 'Typescript', value: '100',  topColor: 'bg-blue-500', bgColor: 'bg-blue-500/10' },
-    { title: 'SQL', value: '100',  topColor: 'bg-yellow-500', bgColor: 'bg-yellow-500/10' },
-    { title: 'HTML5', value: '100',  topColor: 'bg-orange-500', bgColor: 'bg-orange-500/10' },
-    { title: 'CSS3', value: '100',  topColor: 'bg-pink-500', bgColor: 'bg-pink-500/10' },
-    { title: 'Other', value: '72',  topColor: 'bg-white', bgColor: 'bg-white/10' }
+  protected readonly languages = [
+    { title: 'C#', value: '100', topColor: 'bg-purple-500', bgColor: 'bg-purple-500/10' },
+    { title: 'Typescript', value: '100', topColor: 'bg-blue-500', bgColor: 'bg-blue-500/10' },
+    { title: 'SQL', value: '100', topColor: 'bg-yellow-500', bgColor: 'bg-yellow-500/10' },
+    { title: 'HTML5', value: '100', topColor: 'bg-orange-500', bgColor: 'bg-orange-500/10' },
+    { title: 'CSS3', value: '100', topColor: 'bg-pink-500', bgColor: 'bg-pink-500/10' },
+    { title: 'Other', value: '72', topColor: 'bg-white', bgColor: 'bg-white/10' }
   ];
 }

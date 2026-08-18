@@ -3,9 +3,10 @@ import { TimelineComponent } from "../../components/timeline/timeline.component"
 import { GithubService } from "../../core/services/github.service";
 @Component({
     selector: 'app-experience',
+    standalone: true,
     imports: [TimelineComponent],
     templateUrl: './experience.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './experience.component.scss'
 })
 export class ExperienceComponent {

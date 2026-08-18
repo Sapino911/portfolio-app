@@ -10,7 +10,7 @@ import { scaleAnimation } from '../../shared/animations';
   imports: [],
   animations: [scaleAnimation],
   templateUrl: './project-card.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './project-card.component.scss'
 })
 export class ProjectCardComponent {

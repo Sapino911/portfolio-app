@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 @Component({
     selector: 'app-github-stat-card',
+    standalone: true,
     imports: [],
     templateUrl: './github-stat-card.component.html',
     styleUrl: './github-stat-card.component.scss',
