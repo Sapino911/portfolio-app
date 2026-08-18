@@ -5,7 +5,8 @@
         </h1>
         <div @scaleAnimation class="glass-card project-card grid lg:grid-cols-[1.2fr_1fr] gap-6 p-6">
             <div class="glass-card md:min-h-96 flex items-center justify-center rounded-xl">
-                <img class="w-full h-full rounded-xl" src="/assets/otcmvs-db.png" alt="OTCMVS Project Screenshot">
+                <img class="w-full h-full rounded-xl" src="/assets/otcmvs-dashboard-nav-closed.png"
+                    alt="OTCMVS Project Screenshot">
             </div>
             <div class="grid grid-cols-1 items-center space-y-4 md:space-y-0">
                 <div class="grid grid-cols-3 gap-4 "><!-- {{project.title}} -->
@@ -60,14 +61,14 @@
                 </div>
                 <div>
                     <div class="grid grid-cols-3 gap-4 ">
-                        <button class="primary-btn">
+                        <button class="primary-btn" disabled>
                             Live Demo
                         </button>
-                        <button class="secondary-btn">
+                        <!--  <button class="secondary-btn">
                             Git Repository
-                        </button>
+                        </button> -->
                         <button (click)="onViewDetails()" class="secondary-btn">
-                            View Details
+                            Case Study
                         </button>
                     </div>
                 </div>

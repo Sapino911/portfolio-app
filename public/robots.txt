@@ -4,4 +4,4 @@ Allow: /
 
 Sitemap:
 
-https://masegoletsapa.dev/sitemap.xml
+https://masego-dev.netlify.app/sitemap.xml

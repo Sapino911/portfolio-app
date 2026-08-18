@@ -118,13 +118,13 @@ export interface Project {
   architecture: Architecture;
   challenges: Challenge[];
   lessons: Lessons;
-} 
+}
 
 export interface Screenshot {
-    id:number;
-    title:string;
-    description:string;
-    image:string;
+  id: number;
+  title: string;
+  description: string;
+  image: string;
 }
 
 export interface Technology {
@@ -163,13 +163,13 @@ export interface Architecture {
 
 export interface Challenge {
 
-    title: string;
+  title: string;
 
-    problem: string;
+  problem: string;
 
-    solution: string;
+  solution: string;
 
-    impact: string;
+  impact: string;
 
 }
 
