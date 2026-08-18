@@ -2,12 +2,13 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
 import { Project } from '../../core/models/project.model';
 import { scaleAnimation } from '../../shared/animations';
+import { BrowserWindowComponent } from "../../shared/components";
 /* import { LucideAngularModule, CircleCheckIcon } from 'lucide-angular'; */
 
 @Component({
   selector: 'app-project-card',
   standalone: true,
-  imports: [],
+  imports: [BrowserWindowComponent],
   animations: [scaleAnimation],
   templateUrl: './project-card.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
