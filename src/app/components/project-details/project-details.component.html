@@ -247,16 +247,13 @@
 
 @if(isOpen){
 
-<div 
-class="fixed inset-0 z-[999] bg-black/80 backdrop-blur-md flex items-center justify-center p-6">
+<div class="fixed inset-0 z-[999] bg-black/80 backdrop-blur-md flex items-center justify-center p-6">
 
-    <div @scaleAnimation
-    class="glass-card w-full max-w-7xl h-[92vh] overflow-hidden rounded-3xl">
+    <div @scaleAnimation class="glass-card w-full max-w-7xl h-[92vh] overflow-hidden rounded-3xl">
 
         <!-- Header -->
 
-        <header
-        class="flex items-center justify-between p-6 border-b border-white/10">
+        <header class="flex items-center justify-between p-6 border-b border-white/10">
 
             <div>
 
@@ -276,27 +273,24 @@ class="fixed inset-0 z-[999] bg-black/80 backdrop-blur-md flex items-center just
 
             <div class="flex gap-4">
 
-                <button
-                class="secondary-btn">
+                <button class="secondary-btn">
 
                     Live Demo
 
                 </button>
 
-                <button
-                class="secondary-btn">
+                <!-- <a href="/" class="secondary-btn">
 
-                    GitHub
+                    Home
 
-                </button>
+                </a> -->
 
-                <button
-                (click)="closeModal()"
-                class="w-11 h-11 rounded-xl hover:bg-white/10">
+                <a href="/" (click)="closeModal()"
+                    class="flex items-center justify-center w-11 h-11  rounded-xl hover:bg-white/10">
 
                     ✕
 
-                </button>
+                </a>
 
             </div>
 
@@ -304,24 +298,21 @@ class="fixed inset-0 z-[999] bg-black/80 backdrop-blur-md flex items-center just
 
         <!-- Body -->
 
-        <div @fadeAnimation
-        class="grid lg:grid-cols-[340px_1fr] h-[calc(92vh-88px)]">
+        <div @fadeAnimation class="grid lg:grid-cols-[340px_1fr] h-[calc(92vh-88px)]">
 
             <!-- Left -->
 
             <aside class="border-r border-white/10 p-8 overflow-y-auto">
 
-    <img @fadeAnimation
-    [src]="project.thumbnail"
-    class="rounded-xl mb-6">
+                <img @fadeAnimation [src]="project.thumbnail" class="rounded-xl mb-6">
 
-    <p class="text-zinc-400 leading-7">
+                <p class="text-zinc-400 leading-7">
 
-        {{project.description}}
+                    {{project.description}}
 
-    </p>
-    <!-- Compact Cards -->
-<!-- <div class="grid grid-cols-2 gap-4">
+                </p>
+                <!-- Compact Cards -->
+                <!-- <div class="grid grid-cols-2 gap-4">
 
     <div class="glass-card p-4">
 
@@ -356,334 +347,326 @@ class="fixed inset-0 z-[999] bg-black/80 backdrop-blur-md flex items-center just
     </div>
 
 </div> -->
-    <div class="mt-8 space-y-6">
+                <div class="mt-8 space-y-6">
 
-        <div>
+                    <div>
 
-            <p class="text-zinc-500">
+                        <p class="text-zinc-500">
 
-                Duration
+                            Duration
 
-            </p>
+                        </p>
 
-            <h4>
+                        <h4>
 
-                {{project.duration}}
+                            {{project.duration}}
 
-            </h4>
+                        </h4>
 
-        </div>
+                    </div>
 
-        <div>
+                    <div>
 
-            <p class="text-zinc-500">
+                        <p class="text-zinc-500">
 
-                Status
+                            Status
 
-            </p>
+                        </p>
 
-            <h4>
+                        <h4>
 
-                {{project.status}}
+                            {{project.status}}
 
-            </h4>
+                        </h4>
 
-        </div>
+                    </div>
 
-        <div>
+                    <div>
 
-            <p class="text-zinc-500">
+                        <p class="text-zinc-500">
 
-                Users
+                            Users
 
-            </p>
+                        </p>
 
-            <h4>
+                        <h4>
 
-                {{project.users}}
+                            {{project.users}}
 
-            </h4>
+                        </h4>
 
-        </div>
+                    </div>
 
-    </div>
+                </div>
 
-</aside>
+            </aside>
 
             <!-- Right -->
 
-            <main
-class="overflow-y-auto">
+            <main class="overflow-y-auto">
 
-    <!-- Hero Screenshot --> 
+                <!-- Hero Screenshot -->
 
-    <div class="p-8">
+                <div class="p-8">
 
-       <img @fadeAnimation
-    [src]="selectedImage"
-    class="w-full rounded-2xl border border-white/10 transition-all duration-300">
+                    <img @fadeAnimation [src]="selectedImage"
+                        class="w-full rounded-2xl border border-white/10 transition-all duration-300">
 
-    </div>
-    <!-- Tech Stack Chips -->
-    <div class="px-8 pb-8 flex flex-wrap gap-3">
+                </div>
+                <!-- Tech Stack Chips -->
+                <div class="px-8 pb-8 flex flex-wrap gap-3">
 
-    @for(tech of project.technologies; track tech.name){
+                    @for(tech of project.technologies; track tech.name){
 
-        <span
-            class="tech-badge">
+                    <span class="tech-badge">
 
-            {{ tech.name }}
-
-        </span>
-
-    }
-
-</div>
-
-    <!-- Thumbnail Gallery -->
-    <div class="flex gap-4 px-8 pb-8 overflow-x-auto">
-
-    @for(image of project.gallery; track image){
-
-        <button (click)="selectedImage = image" class="rounded-xl overflow-hidden border-2 transition-all duration-300" [class.border-pink-500]="selectedImage === image" [class.border-white]="selectedImage !== image">
-           
-            <img [src]="image" class="w-40 h-24 object-cover hover:scale-105 transition-transform duration-300">
-        </button>
-
-    }
-
-</div>
-<!-- Tab Bar -->
-<div @slideUpAnimation
-class="border-t border-white/10">
-
-    <nav class="flex gap-6 px-8 border-t border-white/10">
-
-    @for(tab of tabs; track tab){
-
-        <button
-
-            (click)="setTab(tab)"
-
-            class="py-5 capitalize border-b-2 transition-all duration-300"
-
-            [class.border-pink-500]="activeTab === tab"
-            [class.text-pink-500]="activeTab === tab"
-            [class.border-transparent]="activeTab !== tab">
-
-            {{ tab }}
-
-        </button>
-
-    }
-
-</nav>
-<div @fadeAnimation class="p-8">
-
-    @switch(activeTab){
-
-        @case('overview'){
-
-            <div class="space-y-10">
-
-    <div class="glass-card p-6">
-
-    <h3 class="text-xl font-semibold mb-3">
-
-        The Problem
-
-    </h3>
-
-    <p class="text-zinc-400 leading-8">
-
-        {{project.overview.problem}}
-
-    </p>
-
-</div>
-
-    <div class="glass-card p-6">
-
-    <h3 class="text-xl font-semibold mb-3">
-
-        The Solution
-
-    </h3>
-
-    <p class="text-zinc-400 leading-8">
-
-        {{project.overview.solution}}
-
-    </p>
-
-</div>
-
-    <div class="glass-card p-6">
-
-    <h3 class="text-xl font-semibold mb-3">
-
-        Project Outcome
-
-    </h3>
-
-    <p class="text-zinc-400 leading-8">
-
-        {{project.overview.outcome}}
-
-    </p>
-
-</div>
-<div class="grid grid-cols-3 gap-6 mt-8">
-
-    <div class="glass-card p-6 text-center">
-
-        <h3 class="text-3xl font-bold text-pink-500">
-
-            {{project.users}}
-
-        </h3>
-
-        <p class="text-zinc-400">
-
-            Users
-
-        </p>
-
-    </div>
-
-    <div class="glass-card p-6 text-center">
-
-        <h3 class="text-3xl font-bold text-blue-500">
-
-            {{project.teamSize}}
-
-        </h3>
-
-        <p class="text-zinc-400">
-
-            Team
-
-        </p>
-
-    </div>
-
-    <div class="glass-card p-6 text-center">
-
-        <h3 class="text-3xl font-bold text-green-500">
-
-            {{project.status}}
-
-        </h3>
-
-        <p class="text-zinc-400">
-
-            Status
-
-        </p>
-
-    </div>
-
-</div>
-</div>
-
-        }
-
-        @case('features'){
-
-           <div class="grid lg:grid-cols-2 gap-6">
-
-    @for(feature of project.features; track feature.title){
-
-        <div
-            class="glass-card p-6 card-hover">
-
-            <div class="flex items-start gap-4">
-
-                <div
-                    class="w-14 h-14 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center">
-
-                    <!-- Icon -->
-
-                    <span class="text-2xl">
-
-                        {{ getFeatureIcon(feature.icon) }}
+                        {{ tech.name }}
 
                     </span>
 
-                </div>
-
-                <div class="flex-1">
-
-                    <h3 class="text-xl font-semibold mb-2">
-
-                        {{ feature.title }}
-
-                    </h3>
-
-                    <p class="text-zinc-400 leading-7">
-
-                        {{ feature.description }}
-
-                    </p>
+                    }
 
                 </div>
 
-            </div>
+                <!-- Thumbnail Gallery -->
+                <div class="flex gap-4 px-8 pb-8 overflow-x-auto">
 
-        </div>
-        
-    }
-<div class="mt-12">
+                    @for(image of project.gallery; track image){
 
-    <h3 class="text-2xl font-bold mb-6">
+                    <button (click)="selectedImage = image"
+                        class="rounded-xl overflow-hidden border-2 transition-all duration-300"
+                        [class.border-pink-500]="selectedImage === image"
+                        [class.border-white]="selectedImage !== image">
 
-        Core Modules
+                        <img [src]="image"
+                            class="w-40 h-24 object-cover hover:scale-105 transition-transform duration-300">
+                    </button>
 
-    </h3>
+                    }
 
-    <div class="flex flex-wrap gap-3">
+                </div>
+                <!-- Tab Bar -->
+                <div @slideUpAnimation class="border-t border-white/10">
 
-        @for(tech of project.technologies; track tech.name){
+                    <nav class="flex gap-6 px-8 border-t border-white/10">
 
-            <span
-                class="tech-badge">
+                        @for(tab of tabs; track tab){
 
-                {{ tech.name }}
+                        <button (click)="setTab(tab)" class="py-5 capitalize border-b-2 transition-all duration-300"
+                            [class.border-pink-500]="activeTab === tab" [class.text-pink-500]="activeTab === tab"
+                            [class.border-transparent]="activeTab !== tab">
 
-            </span>
+                            {{ tab }}
 
-        }
+                        </button>
 
-    </div>
+                        }
 
-</div>
-</div>
+                    </nav>
+                    <div @fadeAnimation class="p-8">
 
-        }
+                        @switch(activeTab){
 
-        @case('architecture'){
+                        @case('overview'){
 
-           <div class="grid lg:grid-cols-2 gap-10">
+                        <div class="space-y-10">
 
-    <!-- Left -->
+                            <div class="glass-card p-6">
 
-    <div class="glass-card p-8">
+                                <h3 class="text-xl font-semibold mb-3">
 
-        <h3 class="text-2xl font-bold mb-8">
+                                    The Problem
 
-            System Flow
+                                </h3>
 
-        </h3>
+                                <p class="text-zinc-400 leading-8">
 
-        <div class="space-y-5">
+                                    {{project.overview.problem}}
 
-            <div class="architecture-node border-pink-500/30">
+                                </p>
 
-                {{ project.architecture.frontend }}
+                            </div>
 
-            </div>
+                            <div class="glass-card p-6">
 
-            <!-- <div class="architecture-arrow">↓</div>
+                                <h3 class="text-xl font-semibold mb-3">
+
+                                    The Solution
+
+                                </h3>
+
+                                <p class="text-zinc-400 leading-8">
+
+                                    {{project.overview.solution}}
+
+                                </p>
+
+                            </div>
+
+                            <div class="glass-card p-6">
+
+                                <h3 class="text-xl font-semibold mb-3">
+
+                                    Project Outcome
+
+                                </h3>
+
+                                <p class="text-zinc-400 leading-8">
+
+                                    {{project.overview.outcome}}
+
+                                </p>
+
+                            </div>
+                            <div class="grid grid-cols-3 gap-6 mt-8">
+
+                                <div class="glass-card p-6 text-center">
+
+                                    <h3 class="text-3xl font-bold text-pink-500">
+
+                                        {{project.users}}
+
+                                    </h3>
+
+                                    <p class="text-zinc-400">
+
+                                        Users
+
+                                    </p>
+
+                                </div>
+
+                                <div class="glass-card p-6 text-center">
+
+                                    <h3 class="text-3xl font-bold text-blue-500">
+
+                                        {{project.teamSize}}
+
+                                    </h3>
+
+                                    <p class="text-zinc-400">
+
+                                        Team
+
+                                    </p>
+
+                                </div>
+
+                                <div class="glass-card p-6 text-center">
+
+                                    <h3 class="text-3xl font-bold text-green-500">
+
+                                        {{project.status}}
+
+                                    </h3>
+
+                                    <p class="text-zinc-400">
+
+                                        Status
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        }
+
+                        @case('features'){
+
+                        <div class="grid lg:grid-cols-2 gap-6">
+
+                            @for(feature of project.features; track feature.title){
+
+                            <div class="glass-card p-6 card-hover">
+
+                                <div class="flex items-start gap-4">
+
+                                    <div
+                                        class="w-14 h-14 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center">
+
+                                        <!-- Icon -->
+
+                                        <span class="text-2xl">
+
+                                            {{ getFeatureIcon(feature.icon) }}
+
+                                        </span>
+
+                                    </div>
+
+                                    <div class="flex-1">
+
+                                        <h3 class="text-xl font-semibold mb-2">
+
+                                            {{ feature.title }}
+
+                                        </h3>
+
+                                        <p class="text-zinc-400 leading-7">
+
+                                            {{ feature.description }}
+
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            }
+                            <div class="mt-12">
+
+                                <h3 class="text-2xl font-bold mb-6">
+
+                                    Core Modules
+
+                                </h3>
+
+                                <div class="flex flex-wrap gap-3">
+
+                                    @for(tech of project.technologies; track tech.name){
+
+                                    <span class="tech-badge">
+
+                                        {{ tech.name }}
+
+                                    </span>
+
+                                    }
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        }
+
+                        @case('architecture'){
+
+                        <div class="grid lg:grid-cols-2 gap-10">
+
+                            <!-- Left -->
+
+                            <div class="glass-card p-8">
+
+                                <h3 class="text-2xl font-bold mb-8">
+
+                                    System Flow
+
+                                </h3>
+
+                                <div class="space-y-5">
+
+                                    <div class="architecture-node border-pink-500/30">
+
+                                        {{ project.architecture.frontend }}
+
+                                    </div>
+
+                                    <!-- <div class="architecture-arrow">↓</div>
 
             <div class="architecture-node border-blue-500/30">
 
@@ -691,418 +674,409 @@ class="border-t border-white/10">
 
             </div> -->
 
-            <div class="architecture-arrow">↓</div>
+                                    <div class="architecture-arrow">↓</div>
 
-            <div class="architecture-node border-blue-500/30">
+                                    <div class="architecture-node border-blue-500/30">
 
-                {{ project.architecture.api }}
+                                        {{ project.architecture.api }}
 
-            </div>
+                                    </div>
 
-            <div class="architecture-arrow">↓</div>
+                                    <div class="architecture-arrow">↓</div>
 
-            <div class="architecture-node border-violet-500/30">
+                                    <div class="architecture-node border-violet-500/30">
 
-                {{ project.architecture.backend }}
+                                        {{ project.architecture.backend }}
 
-            </div>
+                                    </div>
 
-            <div class="architecture-arrow">↓</div>
+                                    <div class="architecture-arrow">↓</div>
 
-            <div class="architecture-node">
+                                    <div class="architecture-node">
 
-                Entity Framework Core
+                                        Entity Framework Core
 
-            </div>
+                                    </div>
 
-            <div class="architecture-arrow">↓</div>
+                                    <div class="architecture-arrow">↓</div>
 
-            <div class="architecture-node border-green-500/30">
+                                    <div class="architecture-node border-green-500/30">
 
-                {{ project.architecture.database }}
+                                        {{ project.architecture.database }}
 
-            </div>
+                                    </div>
 
-        </div>
-<div class="glass-card p-6 mt-8">
+                                </div>
+                                <div class="glass-card p-6 mt-8">
 
-    <h3 class="text-xl font-semibold mb-4">
+                                    <h3 class="text-xl font-semibold mb-4">
 
-        Application Layers
+                                        Application Layers
 
-    </h3>
+                                    </h3>
 
-    <ul class="space-y-3 text-zinc-400">
+                                    <ul class="space-y-3 text-zinc-400">
 
-        <li><strong>Frontend:</strong> Handles the user interface and client-side interactions.</li>
+                                        <li><strong>Frontend:</strong> Handles the user interface and client-side
+                                            interactions.</li>
 
-        <li><strong>API:</strong> Processes requests, validates data, and exposes REST endpoints.</li>
+                                        <li><strong>API:</strong> Processes requests, validates data, and exposes REST
+                                            endpoints.</li>
 
-        <li><strong>Business Layer:</strong> Contains the application logic and services.</li>
+                                        <li><strong>Business Layer:</strong> Contains the application logic and
+                                            services.</li>
 
-        <li><strong>Database:</strong> Stores users, bookings, payments, and application data.</li>
+                                        <li><strong>Database:</strong> Stores users, bookings, payments, and application
+                                            data.</li>
 
-    </ul>
+                                    </ul>
 
-</div>
-    </div>
+                                </div>
+                            </div>
 
-    <!-- Right -->
+                            <!-- Right -->
 
-    <div class="glass-card p-8">
+                            <div class="glass-card p-8">
 
-        <h3 class="text-2xl font-bold mb-8">
+                                <h3 class="text-2xl font-bold mb-8">
 
-            Architecture Highlights
+                                    Architecture Highlights
 
-        </h3>
+                                </h3>
 
-        <div class="space-y-4">
+                                <div class="space-y-4">
 
-            <div
-                class="flex items-center gap-4">
+                                    <div class="flex items-center gap-4">
 
-                <span class="text-pink-500">
+                                        <span class="text-pink-500">
 
-                    ✓
+                                            ✓
 
-                </span>
+                                        </span>
 
-                {{ project.architecture.authentication }}
+                                        {{ project.architecture.authentication }}
 
-            </div>
+                                    </div>
 
-            @for(pattern of project.architecture.patterns; track pattern){
+                                    @for(pattern of project.architecture.patterns; track pattern){
 
-                <div
-                    class="flex items-center gap-4">
+                                    <div class="flex items-center gap-4">
 
-                    <span class="text-pink-500">
+                                        <span class="text-pink-500">
 
-                        ✓
+                                            ✓
 
-                    </span>
+                                        </span>
 
-                    {{ pattern }}
+                                        {{ pattern }}
+
+                                    </div>
+
+                                    }
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        }
+
+                        @case('challenges'){
+
+                        <div class="space-y-8">
+
+                            @for(challenge of project.challenges; track challenge.title){
+
+                            <div class="glass-card p-8">
+
+                                <div class="grid lg:grid-cols-3 gap-8">
+
+                                    <div>
+
+                                        <span class="text-red-400 text-sm font-semibold uppercase">
+
+                                            Challenge
+
+                                        </span>
+
+                                        <h3 class="text-xl font-bold mt-3">
+
+                                            {{challenge.title}}
+
+                                        </h3>
+
+                                        <p class="text-zinc-400 mt-4 leading-7">
+
+                                            {{challenge.problem}}
+
+                                        </p>
+
+                                    </div>
+
+                                    <div>
+
+                                        <span class="text-blue-400 text-sm font-semibold uppercase">
+
+                                            Solution
+
+                                        </span>
+
+                                        <p class="text-zinc-400 mt-4 leading-7">
+
+                                            {{challenge.solution}}
+
+                                        </p>
+
+                                    </div>
+
+                                    <div>
+
+                                        <span class="text-green-400 text-sm font-semibold uppercase">
+
+                                            Impact
+
+                                        </span>
+
+                                        <p class="text-zinc-400 mt-4 leading-7">
+
+                                            {{challenge.impact}}
+
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            }
+                            <div class="glass-card p-8 mt-8">
+
+                                <h3 class="text-2xl font-bold mb-6">
+
+                                    Key Takeaways
+
+                                </h3>
+
+                                <div class="grid grid-cols-2 gap-6">
+
+                                    <div>
+
+                                        ✓ Problem Solving
+
+                                    </div>
+
+                                    <div>
+
+                                        ✓ Clean Architecture
+
+                                    </div>
+
+                                    <div>
+
+                                        ✓ API Design
+
+                                    </div>
+
+                                    <div>
+
+                                        ✓ Database Optimization
+
+                                    </div>
+
+                                    <div>
+
+                                        ✓ Authentication
+
+                                    </div>
+
+                                    <div>
+
+                                        ✓ Responsive UI
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        }
+
+                        @case('lessons'){
+
+                        <!-- Lessons -->
+                        <div class="grid lg:grid-cols-3 gap-6">
+
+                            <!-- Technical -->
+
+                            <div class="glass-card p-6">
+
+                                <div class="flex items-center gap-3 mb-6">
+
+                                    <div class="w-12 h-12 rounded-xl bg-pink-500/10 flex items-center justify-center">
+
+                                        💻
+
+                                    </div>
+
+                                    <h3 class="text-xl font-bold">
+
+                                        Technical Growth
+
+                                    </h3>
+
+                                </div>
+
+                                <div class="space-y-4">
+
+                                    @for(item of project.lessons.technical; track item){
+
+                                    <div class="flex gap-3">
+
+                                        <span class="text-pink-500">
+
+                                            ✓
+
+                                        </span>
+
+                                        <span class="text-zinc-400">
+
+                                            {{item}}
+
+                                        </span>
+
+                                    </div>
+
+                                    }
+
+                                </div>
+
+                            </div>
+
+                            <!-- Process -->
+
+                            <div class="glass-card p-6">
+
+                                <div class="flex items-center gap-3 mb-6">
+
+                                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center">
+
+                                        ⚙️
+
+                                    </div>
+
+                                    <h3 class="text-xl font-bold">
+
+                                        Development Process
+
+                                    </h3>
+
+                                </div>
+
+                                <div class="space-y-4">
+
+                                    @for(item of project.lessons.process; track item){
+
+                                    <div class="flex gap-3">
+
+                                        <span class="text-blue-500">
+
+                                            ✓
+
+                                        </span>
+
+                                        <span class="text-zinc-400">
+
+                                            {{item}}
+
+                                        </span>
+
+                                    </div>
+
+                                    }
+
+                                </div>
+
+                            </div>
+
+                            <!-- Future -->
+
+                            <div class="glass-card p-6">
+
+                                <div class="flex items-center gap-3 mb-6">
+
+                                    <div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center">
+
+                                        🚀
+
+                                    </div>
+
+                                    <h3 class="text-xl font-bold">
+
+                                        Future Enhancements
+
+                                    </h3>
+
+                                </div>
+
+                                <div class="space-y-4">
+
+                                    @for(item of project.lessons.future; track item){
+
+                                    <div class="flex gap-3">
+
+                                        <span class="text-green-500">
+
+                                            ✓
+
+                                        </span>
+
+                                        <span class="text-zinc-400">
+
+                                            {{item}}
+
+                                        </span>
+
+                                    </div>
+
+                                    }
+
+
+                                </div>
+
+                            </div>
+                            <div class="glass-card p-8 mt-8">
+
+                                <h2 class="text-2xl font-bold mb-4">
+
+                                    Final Reflection
+
+                                </h2>
+
+                                <p class="text-zinc-400 leading-8">
+
+                                    This project strengthened my expertise in full-stack software development,
+                                    particularly in designing scalable architectures, building secure REST APIs,
+                                    and developing responsive Angular applications. It also reinforced the
+                                    importance of clean code, reusable components, and planning for future
+                                    scalability.
+
+                                </p>
+
+                            </div>
+                        </div>
+
+                        }
+
+                        }
+
+                    </div>
 
                 </div>
 
-            }
-
-        </div>
-
-    </div>
-
-</div>
-
-        }
-
-        @case('challenges'){
-
-            <div class="space-y-8">
-
-    @for(challenge of project.challenges; track challenge.title){
-
-        <div class="glass-card p-8">
-
-            <div class="grid lg:grid-cols-3 gap-8">
-
-                <div>
-
-                    <span
-                    class="text-red-400 text-sm font-semibold uppercase">
-
-                        Challenge
-
-                    </span>
-
-                    <h3
-                    class="text-xl font-bold mt-3">
-
-                        {{challenge.title}}
-
-                    </h3>
-
-                    <p
-                    class="text-zinc-400 mt-4 leading-7">
-
-                        {{challenge.problem}}
-
-                    </p>
-
-                </div>
-
-                <div>
-
-                    <span
-                    class="text-blue-400 text-sm font-semibold uppercase">
-
-                        Solution
-
-                    </span>
-
-                    <p
-                    class="text-zinc-400 mt-4 leading-7">
-
-                        {{challenge.solution}}
-
-                    </p>
-
-                </div>
-
-                <div>
-
-                    <span
-                    class="text-green-400 text-sm font-semibold uppercase">
-
-                        Impact
-
-                    </span>
-
-                    <p
-                    class="text-zinc-400 mt-4 leading-7">
-
-                        {{challenge.impact}}
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    }
-<div class="glass-card p-8 mt-8">
-
-    <h3
-    class="text-2xl font-bold mb-6">
-
-        Key Takeaways
-
-    </h3>
-
-    <div class="grid grid-cols-2 gap-6">
-
-        <div>
-
-            ✓ Problem Solving
-
-        </div>
-
-        <div>
-
-            ✓ Clean Architecture
-
-        </div>
-
-        <div>
-
-            ✓ API Design
-
-        </div>
-
-        <div>
-
-            ✓ Database Optimization
-
-        </div>
-
-        <div>
-
-            ✓ Authentication
-
-        </div>
-
-        <div>
-
-            ✓ Responsive UI
-
-        </div>
-
-    </div>
-
-</div>
-</div>
-
-        }
-
-        @case('lessons'){
-
-            <!-- Lessons -->
-             <div class="grid lg:grid-cols-3 gap-6">
-
-    <!-- Technical -->
-
-    <div class="glass-card p-6">
-
-        <div class="flex items-center gap-3 mb-6">
-
-            <div
-                class="w-12 h-12 rounded-xl bg-pink-500/10 flex items-center justify-center">
-
-                💻
-
-            </div>
-
-            <h3 class="text-xl font-bold">
-
-                Technical Growth
-
-            </h3>
-
-        </div>
-
-        <div class="space-y-4">
-
-            @for(item of project.lessons.technical; track item){
-
-                <div class="flex gap-3">
-
-                    <span class="text-pink-500">
-
-                        ✓
-
-                    </span>
-
-                    <span class="text-zinc-400">
-
-                        {{item}}
-
-                    </span>
-
-                </div>
-
-            }
-
-        </div>
-
-    </div>
-
-    <!-- Process -->
-
-    <div class="glass-card p-6">
-
-        <div class="flex items-center gap-3 mb-6">
-
-            <div
-                class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center">
-
-                ⚙️
-
-            </div>
-
-            <h3 class="text-xl font-bold">
-
-                Development Process
-
-            </h3>
-
-        </div>
-
-        <div class="space-y-4">
-
-            @for(item of project.lessons.process; track item){
-
-                <div class="flex gap-3">
-
-                    <span class="text-blue-500">
-
-                        ✓
-
-                    </span>
-
-                    <span class="text-zinc-400">
-
-                        {{item}}
-
-                    </span>
-
-                </div>
-
-            }
-
-        </div>
-
-    </div>
-
-    <!-- Future -->
-
-    <div class="glass-card p-6">
-
-        <div class="flex items-center gap-3 mb-6">
-
-            <div
-                class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center">
-
-                🚀
-
-            </div>
-
-            <h3 class="text-xl font-bold">
-
-                Future Enhancements
-
-            </h3>
-
-        </div>
-
-        <div class="space-y-4">
-
-            @for(item of project.lessons.future; track item){
-
-                <div class="flex gap-3">
-
-                    <span class="text-green-500">
-
-                        ✓
-
-                    </span>
-
-                    <span class="text-zinc-400">
-
-                        {{item}}
-
-                    </span>
-
-                </div>
-
-            }
-            
-
-        </div>
-        
-    </div>
-<div class="glass-card p-8 mt-8">
-
-    <h2 class="text-2xl font-bold mb-4">
-
-        Final Reflection
-
-    </h2>
-
-    <p class="text-zinc-400 leading-8">
-
-        This project strengthened my expertise in full-stack software development,
-        particularly in designing scalable architectures, building secure REST APIs,
-        and developing responsive Angular applications. It also reinforced the
-        importance of clean code, reusable components, and planning for future
-        scalability.
-
-    </p>
-
-</div>
-</div>
-
-        }
-
-    }
-
-</div>
-
-</div>
-
-</main>
+            </main>
 
         </div>
 
