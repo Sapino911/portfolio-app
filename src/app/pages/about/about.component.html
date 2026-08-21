@@ -26,13 +26,24 @@
         @for(highlight of highlights; track highlight.title){
         <div class="glass-card p-6 card-hover">
           <h3 class="text-4xl font-bold" [ngClass]="highlight.textColor">
-            <app-counter [end]="highlight.value" suffix="+" />
+            <app-counter [end]="highlight.value" [duration]="4000" suffix="+" />
           </h3>
+
           <p class="text-zinc-400 mt-2">
             {{ highlight.title }}
           </p>
         </div>
         }
+        <div class="glass-card p-6 card-hover">
+          <h3 class="text-4xl font-bold text-yellow-500">
+            <app-counter [end]="100" [duration]="4000" suffix="%" />
+          </h3>
+          <p class="text-zinc-400 mt-2">
+            Project Commitment
+          </p>
+        </div>
+       
+        
       </div>
     </div>
   </div>

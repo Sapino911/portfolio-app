@@ -1,13 +1,11 @@
 <section>
-@for(project of projects; track project.id){
+    @for(project of projects; track project.id){
 
-    <app-project-card class="object-cover"
-        [project]="project"
-        (viewDetails)="openProject($event)">
+    <app-project-card class="object-cover" [project]="project" (viewDetails)="openProject($event)">
     </app-project-card>
-}
+    }
 
-<!-- <section id="projects" class="py-0 mb-8">
+    <!-- <section id="projects" class="py-0 mb-8">
     <div class="section-container">
         <h1 class="section-subtitle text-white uppercase font-semibold mb-6">
             <span class="text-xs bg-pink-500 rounded-full px-1.5 mr-4"></span> All Projects
@@ -39,13 +37,10 @@
     </div>
 </section> -->
 
-@if(selectedProject){
+    @if(selectedProject){
 
-<app-project-details
-    [project]="selectedProject"
-    [isOpen]="showProjectModal"
-    (close)="closeProject()">
-</app-project-details>
+    <app-project-details [project]="selectedProject" [isOpen]="showProjectModal" (close)="closeProject()">
+    </app-project-details>
 
-}
+    }
 </section>
